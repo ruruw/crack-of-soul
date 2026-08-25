@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uji Coba Audio — The Crack of Soul</title>
+<style>
+:root{--bg:#0f1117;--card:#171a23;--line:#252a37;--ink:#e8eaf2;--dim:#8b90a3;--acc:#7c6bd6;--ok:#3fbf8f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:28px 18px 70px}
+h1{font-size:clamp(20px,4vw,27px);margin:0 0 4px}
+.sub{color:var(--dim);font-size:14px;margin-bottom:22px}
+h2{font-size:15px;margin:28px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line);color:#c3b7ff}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+button{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:10px;
+ padding:10px 14px;font-size:13.5px;font-family:inherit;cursor:pointer;transition:.15s}
+button:hover{border-color:var(--acc);background:#1d2130}
+button:active{transform:scale(.97)}
+button.on{border-color:var(--ok);background:rgba(63,191,143,.14);color:#9fe8c8}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);
+ border-radius:12px;padding:14px 16px;margin:18px 0;font-size:14px}
+.note b{color:#fff}
+label{display:flex;align-items:center;gap:12px;margin:10px 0;font-size:14px}
+input[type=range]{flex:1;accent-color:var(--acc)}
+.tag{font-size:11px;color:var(--dim);margin-left:6px}
+#status{position:fixed;left:0;right:0;bottom:0;background:#11131b;border-top:1px solid var(--line);
+ padding:10px 18px;font-size:13px;color:var(--dim)}
+</style></head><body><div class="wrap">
+<h1>Uji Coba Audio</h1>
+<div class="sub">The Crack of Soul · seluruh suara dibangkitkan oleh kode, tanpa satu pun berkas audio</div>
+
+<div class="note"><b>Ketuk salah satu tombol untuk mendengarkan.</b> Peramban baru mengizinkan suara
+setelah ada sentuhan pertama dari pengguna, jadi tombol pertama mungkin terasa telat sepersekian detik.
+Semua yang terdengar di halaman ini dihasilkan langsung saat itu juga, bukan diputar dari rekaman.</div>
+
+<h2>Musik latar <span class="tag">6 suasana sesuai dokumen Sound Design</span></h2>
+<div class="row" id="musik"></div>
+
+<h2>Efek suara umum</h2>
+<div class="row" id="sfx1"></div>
+
+<h2>Suara khusus boss</h2>
+<div class="row" id="sfx2"></div>
+
+<h2>Pengaturan audio</h2>
+<label>Volume musik <input type="range" id="vm" min="0" max="100" value="55"><span id="lm">55</span></label>
+<label>Volume efek suara <input type="range" id="ve" min="0" max="100" value="80"><span id="le">80</span></label>
+<label><button id="bisu">Bisukan semua suara</button></label>
+
+<div class="note" style="border-left-color:var(--ok)">
+<b>Kenapa cara ini dipakai.</b> Ukuran tambahan pada APK nol kilobyte, tidak ada urusan lisensi karena
+tidak memakai karya siapa pun, dan tiap suara bisa diubah cukup dengan mengganti satu angka di kode.
+Kalau nanti berkas audio asli datang, sistem ini tinggal diganti tanpa mengubah bagian lain permainan.
+</div>
+</div>
+<div id="status">Siap. Belum ada suara yang diputar.</div>
+<script>
+/*__AUDIO__*/
+const LBL={menu:'Menu Utama',level1:'Level 1 — ceria',sendu:'Level 1 — sendu',
+ level2:'Level 2 — ketegangan',level3:'Level 3 — digital gelap',boss:'Boss Battle',ending:'Ending'};
+const S1=['klik','dialog','pilih','naik','turun','pindah','bossMuncul','bossKena','bossKalah',
+ 'levelSelesai','pencapaian','selesai','gameOver'];
+const S2=['bisikan','detakJantung','langkahBerat','rantai','tanahRetak','notifikasi','glitch','ketikan'];
+const NAMA={klik:'Klik tombol',dialog:'Membuka dialog',pilih:'Pilihan dipilih',naik:'Nilai bertambah',
+ turun:'Nilai berkurang',pindah:'Halaman berpindah',bossMuncul:'Boss muncul',bossKena:'Boss terkena serangan',
+ bossKalah:'Boss dikalahkan',levelSelesai:'Level selesai',pencapaian:'Pencapaian terbuka',
+ selesai:'Game selesai',gameOver:'Hari terasa berat',bisikan:'Bisikan samar',detakJantung:'Detak jantung',
+ langkahBerat:'Langkah kaki berat',rantai:'Rantai bergesekan',tanahRetak:'Tanah retak',
+ notifikasi:'Notifikasi ponsel',glitch:'Gangguan digital',ketikan:'Ketikan keyboard'};
+const st=m=>document.getElementById('status').textContent=m;
+function mk(host,items,fn,cls){const h=document.getElementById(host);
+ items.forEach(k=>{const b=document.createElement('button');b.textContent=NAMA[k]||LBL[k]||k;
+ b.dataset.k=k;b.onclick=()=>fn(k,b);h.appendChild(b);});}
+mk('musik',Object.keys(LBL),(k,b)=>{document.querySelectorAll('#musik button').forEach(x=>x.classList.remove('on'));
+ if(Audio2._now===k){Audio2.berhenti();Audio2._now=null;st('Musik dihentikan.');}
+ else{Audio2.musik(k);Audio2._now=k;b.classList.add('on');st('Memutar musik: '+LBL[k]);}});
+mk('sfx1',S1,k=>{Audio2.play(k);st('Efek suara: '+(NAMA[k]||k));});
+mk('sfx2',S2,k=>{Audio2.play(k);st('Suara boss: '+(NAMA[k]||k));});
+vm.oninput=e=>{Audio2.setVol('musik',e.target.value/100);lm.textContent=e.target.value};
+ve.oninput=e=>{Audio2.setVol('efek',e.target.value/100);le.textContent=e.target.value};
+let bisu=false;
+document.getElementById('bisu').onclick=e=>{bisu=!bisu;Audio2.setBisu(bisu);
+ e.target.classList.toggle('on',bisu);e.target.textContent=bisu?'Bunyikan kembali':'Bisukan semua suara';
+ st(bisu?'Semua suara dibisukan.':'Suara dinyalakan kembali.')};
+</script></body></html>

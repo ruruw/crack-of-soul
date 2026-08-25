@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.vercel.thecrackofsoul.twa",
+    "sha256_cert_fingerprints": ["80:C2:D1:7F:89:0B:F8:19:C2:C9:4E:54:8C:9A:A3:7C:2A:7A:8E:0F:31:5F:E4:F9:54:FD:2E:EC:1C:DB:E0:7E"]
+  }
+}]
