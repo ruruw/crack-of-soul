@@ -1735,7 +1735,7 @@ const NASKAH = [
           {
             "who": "Laki-laki 2",
             "text": "\"Sudahlah, jangan ngomong terlalu keras. Nanti dia dengar.”",
-            "aksi": "(Menegur dengan nada malas, setengah tertawa)"
+            "aksi": "Menegur dengan nada malas, setengah tertawa"
           },
           {
             "who": "Laki-laki 1",
@@ -2373,59 +2373,38 @@ const NASKAH = [
           },
           {
             "who": "Perempuan 1",
-            "text": "(Berbisik ke samping)"
-          },
-          {
-            "who": null,
-            "text": "\"Tiap kali ke perpus, pasti ada dia di meja itu. Nggak ada temannya sama sekali ya?\""
+            "text": "\"Tiap kali ke perpus, pasti ada dia di meja itu. Nggak ada temannya sama sekali ya?\"",
+            "aksi": "Berbisik ke samping"
           },
           {
             "who": "Laki-laki 1",
-            "text": "(Terkekeh pelan)"
-          },
-          {
-            "who": null,
-            "text": "\"Nggak ada lah. Siapa juga yang betah main sama dia?"
+            "text": "\"Nggak ada lah. Siapa juga yang betah main sama dia?",
+            "aksi": "Terkekeh pelan"
           },
           {
             "who": "Laki-laki 2",
-            "text": "(Sambil membuka buku yang ada di tangannya)"
-          },
-          {
-            "who": null,
-            "text": "\"Aku pernah coba duduk satu meja sama dia minggu lalu. Nggak sampai lima menit aku pindah.\""
+            "text": "\"Aku pernah coba duduk satu meja sama dia minggu lalu. Nggak sampai lima menit aku pindah.\"",
+            "aksi": "Sambil membuka buku yang ada di tangannya"
           },
           {
             "who": "Perempuan 1",
-            "text": "(Berbisik sambil nahan tawa)"
-          },
-          {
-            "who": null,
-            "text": "\"Aku kasihan sih sebenarnya... Nggak pernah kelihatannya dia senyum atau ngobrol sama orang.\""
+            "text": "\"Aku kasihan sih sebenarnya... Nggak pernah kelihatannya dia senyum atau ngobrol sama orang.\"",
+            "aksi": "Berbisik sambil nahan tawa"
           },
           {
             "who": "Laki-laki 1",
-            "text": "(Mengangkat bahu)"
-          },
-          {
-            "who": null,
-            "text": "\"Dia tuh seolah punya gelembung sendiri tau nggak. Orang lain refleks mau menjauh aja dari gelembungnya.\""
+            "text": "\"Dia tuh seolah punya gelembung sendiri tau nggak. Orang lain refleks mau menjauh aja dari gelembungnya.\"",
+            "aksi": "Mengangkat bahu"
           },
           {
             "who": "Perempuan 3",
-            "text": "(Memutar bola mata)"
-          },
-          {
-            "who": null,
-            "text": "\"Iya, kalau dia lewat di koridor rak buku aja, orang-orang refleks geser. Bukan karena takut, tapi emang males kontak mata.\""
+            "text": "\"Iya, kalau dia lewat di koridor rak buku aja, orang-orang refleks geser. Bukan karena takut, tapi emang males kontak mata.\"",
+            "aksi": "Memutar bola mata"
           },
           {
             "who": "Laki-laki 2",
-            "text": "(Menegur pelan setengah bercanda)"
-          },
-          {
-            "who": null,
-            "text": "\"Hush, pelan-pelan. Suara kamu berdua kedengaran sampai meja depan tuh.\""
+            "text": "\"Hush, pelan-pelan. Suara kamu berdua kedengaran sampai meja depan tuh.\"",
+            "aksi": "Menegur pelan setengah bercanda"
           },
           {
             "who": null,
@@ -4917,7 +4896,7 @@ const LATAR = {
 
 const KATA_LATAR = [
   [/\b(pergi ke perpustakaan untuk mengerjakan tugas kelompok)\b/i, 'cg_l3_perpus'],
-  [/\b(sekelompok siswa yang sebelumnya mengejek)\b/i, 'cg_l1_perpus_awal'],
+  [/\b(sekelompok siswa yang sebelumnya (sering )?mengejek)\b/i, 'cg_l1_perpus_awal'],
   [/\b(menunduk memegang pulpen dan bukunya|menunduk memegang pulpen dan buku catatan)\b/i, 'cg_l1_perpus_menunduk'],
   [/\b(berhenti menulis\. Tangan yang memegang pulpen menegang)\b/i, 'cg_l1_perpus'],
   [/\b(Suasana perpustakaan yang seharusnya tenang berubah menjadi tidak nyaman)\b/i, 'cg_l1_perpus_sedih'],

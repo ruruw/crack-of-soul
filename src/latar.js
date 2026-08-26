@@ -162,7 +162,7 @@ const LATAR = {
 
 const KATA_LATAR = [
   [/\b(pergi ke perpustakaan untuk mengerjakan tugas kelompok)\b/i, 'cg_l3_perpus'],
-  [/\b(sekelompok siswa yang sebelumnya mengejek)\b/i, 'cg_l1_perpus_awal'],
+  [/\b(sekelompok siswa yang sebelumnya (sering )?mengejek)\b/i, 'cg_l1_perpus_awal'],
   [/\b(menunduk memegang pulpen dan bukunya|menunduk memegang pulpen dan buku catatan)\b/i, 'cg_l1_perpus_menunduk'],
   [/\b(berhenti menulis\. Tangan yang memegang pulpen menegang)\b/i, 'cg_l1_perpus'],
   [/\b(Suasana perpustakaan yang seharusnya tenang berubah menjadi tidak nyaman)\b/i, 'cg_l1_perpus_sedih'],

@@ -1128,59 +1128,38 @@ const NASKAH = [
           },
           {
             "who": "Perempuan 1",
-            "text": "(Berbisik ke samping)"
-          },
-          {
-            "who": null,
-            "text": "\"Tiap kali ke perpus, pasti ada dia di meja itu. Nggak ada temannya sama sekali ya?\""
+            "text": "\"Tiap kali ke perpus, pasti ada dia di meja itu. Nggak ada temannya sama sekali ya?\"",
+            "aksi": "Berbisik ke samping"
           },
           {
             "who": "Laki-laki 1",
-            "text": "(Terkekeh pelan)"
-          },
-          {
-            "who": null,
-            "text": "\"Nggak ada lah. Siapa juga yang betah main sama dia?"
+            "text": "\"Nggak ada lah. Siapa juga yang betah main sama dia?",
+            "aksi": "Terkekeh pelan"
           },
           {
             "who": "Laki-laki 2",
-            "text": "(Sambil membuka buku yang ada di tangannya)"
-          },
-          {
-            "who": null,
-            "text": "\"Aku pernah coba duduk satu meja sama dia minggu lalu. Nggak sampai lima menit aku pindah.\""
+            "text": "\"Aku pernah coba duduk satu meja sama dia minggu lalu. Nggak sampai lima menit aku pindah.\"",
+            "aksi": "Sambil membuka buku yang ada di tangannya"
           },
           {
             "who": "Perempuan 1",
-            "text": "(Berbisik sambil nahan tawa)"
-          },
-          {
-            "who": null,
-            "text": "\"Aku kasihan sih sebenarnya... Nggak pernah kelihatannya dia senyum atau ngobrol sama orang.\""
+            "text": "\"Aku kasihan sih sebenarnya... Nggak pernah kelihatannya dia senyum atau ngobrol sama orang.\"",
+            "aksi": "Berbisik sambil nahan tawa"
           },
           {
             "who": "Laki-laki 1",
-            "text": "(Mengangkat bahu)"
-          },
-          {
-            "who": null,
-            "text": "\"Dia tuh seolah punya gelembung sendiri tau nggak. Orang lain refleks mau menjauh aja dari gelembungnya.\""
+            "text": "\"Dia tuh seolah punya gelembung sendiri tau nggak. Orang lain refleks mau menjauh aja dari gelembungnya.\"",
+            "aksi": "Mengangkat bahu"
           },
           {
             "who": "Perempuan 3",
-            "text": "(Memutar bola mata)"
-          },
-          {
-            "who": null,
-            "text": "\"Iya, kalau dia lewat di koridor rak buku aja, orang-orang refleks geser. Bukan karena takut, tapi emang males kontak mata.\""
+            "text": "\"Iya, kalau dia lewat di koridor rak buku aja, orang-orang refleks geser. Bukan karena takut, tapi emang males kontak mata.\"",
+            "aksi": "Memutar bola mata"
           },
           {
             "who": "Laki-laki 2",
-            "text": "(Menegur pelan setengah bercanda)"
-          },
-          {
-            "who": null,
-            "text": "\"Hush, pelan-pelan. Suara kamu berdua kedengaran sampai meja depan tuh.\""
+            "text": "\"Hush, pelan-pelan. Suara kamu berdua kedengaran sampai meja depan tuh.\"",
+            "aksi": "Menegur pelan setengah bercanda"
           },
           {
             "who": null,
