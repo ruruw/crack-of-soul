@@ -490,7 +490,7 @@ const NASKAH = [
           {
             "who": "Laki-laki 2",
             "text": "\"Sudahlah, jangan ngomong terlalu keras. Nanti dia dengar.”",
-            "aksi": "(Menegur dengan nada malas, setengah tertawa)"
+            "aksi": "Menegur dengan nada malas, setengah tertawa"
           },
           {
             "who": "Laki-laki 1",
@@ -536,11 +536,8 @@ const NASKAH = [
               },
               {
                 "who": "{NAMA}",
-                "text": "(Membentak dengan suara keras)"
-              },
-              {
-                "who": null,
-                "text": "\"Memangnya tubuhku ngaruh ke hidup kalian?\""
+                "text": "\"Memangnya tubuhku ngaruh ke hidup kalian?\"",
+                "aksi": "(Membentak dengan suara keras)"
               },
               {
                 "who": "Teman 2",
@@ -552,19 +549,13 @@ const NASKAH = [
               },
               {
                 "who": "Teman 3",
-                "text": "(Sambil memutar bola mata malas)"
-              },
-              {
-                "who": null,
-                "text": "\"Yaelah... cuma bercanda.\""
+                "text": "\"Yaelah... cuma bercanda.\"",
+                "aksi": "(Sambil memutar bola mata malas)"
               },
               {
                 "who": "{NAMA}",
-                "text": "(Kesal dengan balasan lawan bicaranya)"
-              },
-              {
-                "who": null,
-                "text": "\"Kalau kalian terus menghina orang, itu bukan bercanda!\""
+                "text": "\"Kalau kalian terus menghina orang, itu bukan bercanda!\"",
+                "aksi": "Kesal dengan balasan lawan bicaranya"
               },
               {
                 "who": "Teman 1",
@@ -712,7 +703,7 @@ const NASKAH = [
           },
           {
             "who": null,
-            "text": "({NAMA} meletakkan sendoknya perlahan. Bunyi *klinting* sendok terdengar jelas.)"
+            "text": "{NAMA} meletakkan sendoknya perlahan. Bunyi *klinting* sendok terdengar jelas."
           },
           {
             "who": "Laki-laki 2",
