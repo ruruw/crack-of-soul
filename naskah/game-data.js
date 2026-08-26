@@ -959,35 +959,23 @@ const NASKAH = [
           },
           {
             "who": "Laki-laki 2",
-            "text": "(Sambil memutar-mutar pensil)"
-          },
-          {
-            "who": null,
-            "text": "\"Kemarin aja aku mau ambil buku di lorong rak tempat dia berdiri, langsung balik badan. Jalannya ketutup semua sama dia.\""
+            "text": "\"Kemarin aja aku mau ambil buku di lorong rak tempat dia berdiri, langsung balik badan. Jalannya ketutup semua sama dia.\"",
+            "aksi": "Sambil memutar-mutar pensil"
           },
           {
             "who": "Laki-laki 1",
-            "text": "(Mengangkat bahu)"
-          },
-          {
-            "who": null,
-            "text": "\"Dia tuh nggak jahat sih, cuma... bikin risih aja kalau lewat di depan kita.\""
+            "text": "\"Dia tuh nggak jahat sih, cuma... bikin risih aja kalau lewat di depan kita.\"",
+            "aksi": "(Mengangkat bahu)"
           },
           {
             "who": "Perempuan 3",
-            "text": "(Memutar bola mata)"
-          },
-          {
-            "who": null,
-            "text": "\"Makanya kalau dia berdiri mau lewat, aku sengaja geser jauh-jauh. Malas aja kalau sampai kesenggol.\""
+            "text": "\"Makanya kalau dia berdiri mau lewat, aku sengaja geser jauh-jauh. Malas aja kalau sampai kesenggol.\"",
+            "aksi": "Memutar bola mata"
           },
           {
             "who": "Laki-laki 2",
-            "text": "(Menegur pelan setengah bercanda)"
-          },
-          {
-            "who": null,
-            "text": "\"Pelan-pelan, ntar orangnya dengar.\""
+            "text": "\"Pelan-pelan, ntar orangnya dengar.\"",
+            "aksi": "Menegur pelan setengah bercanda"
           },
           {
             "who": "Laki-laki 1",

@@ -5,7 +5,7 @@
    dari tokoh dan dari teks dialog.
    ============================================================ */
 
-function _kaca(n, x, y, w, h, gap){        // deretan jendela / rak
+function _kaca(n, x, y, w, h, gap) {        // deretan jendela / rak
   let s = '';
   for (let i = 0; i < n; i++) s += `<rect x="${x + i * (w + gap)}" y="${y}" width="${w}" height="${h}" rx="3"/>`;
   return s;
@@ -162,6 +162,9 @@ const LATAR = {
 
 const KATA_LATAR = [
   [/\b(pergi ke perpustakaan untuk mengerjakan tugas kelompok)\b/i, 'cg_l3_perpus'],
+  [/\b(sekelompok siswa yang sebelumnya mengejek)\b/i, 'cg_l1_perpus_awal'],
+  [/\b(menunduk memegang pulpen dan bukunya|menunduk memegang pulpen dan buku catatan)\b/i, 'cg_l1_perpus_menunduk'],
+  [/\b(berhenti menulis\. Tangan yang memegang pulpen menegang)\b/i, 'cg_l1_perpus'],
   [/\b(memilih tetap duduk dan melanjutkan membaca bukunya)\b/i, 'cg_l3_diam'],
   [/\b(berdiri dan membalas semua ejekan)\b/i, 'cg_l3_marah'],
   [/\b(memilih menutup bukunya(,| dan) memasukkannya ke dalam tas)\b/i, 'cg_l3_pergi'],
@@ -177,24 +180,23 @@ const KATA_LATAR = [
   [/\b(jam istirahat,.*?menghampiri teman|teman yang paling ia percaya)\b/i, 'cg_l1_teman'],
   [/\b(pergi ke kantin untuk makan siang seorang diri)\b/i, 'cg_l2_kantin'],
   [/\b(duduk membelakangi mereka di tengah kantin)\b/i, 'cg_l2_kantin_2'],
-  [/\b(berhenti menulis\. Tangan yang memegang pulpen menegang)\b/i, 'cg_l1_perpus'],
   [/\b(kantin|kanti|jajan|meja makan|antre makan)\b/i, 'canteen'],
-  [/\b(perpustakaan|perpus|rak buku|meja baca)\b/i,     'library'],
+  [/\b(perpustakaan|perpus|rak buku|meja baca)\b/i, 'library'],
   [/\b(taman|lapangan|halaman sekolah|luar kelas|gerbang)\b/i, 'park'],
-  [/\b(ruang kelas|di kelas|papan tulis|bangku kelas)\b/i,     'class'],
+  [/\b(ruang kelas|di kelas|papan tulis|bangku kelas)\b/i, 'class'],
   [/\b(media sosial|grup chat|grup kelas|ponsel|hp\b|instagram|whatsapp|unggahan|komentar|layar)\b/i, 'phone']
 ];
-function latarDariTeks(t){
+function latarDariTeks(t) {
   for (const [re, k] of KATA_LATAR) if (re.test(t || '')) return k;
   return null;
 }
 
-function pasangLatar(kind){
+function pasangLatar(kind) {
   const host = document.getElementById('bgart');
   if (!host) return;
   if (host.dataset.k === kind) return;
   host.dataset.k = kind;
-  
+
   if (kind.startsWith('cg_')) {
     const cg_file = (typeof S !== 'undefined' && S && S.karakter) ? `${kind}_${S.karakter}` : kind;
     host.innerHTML = `<img src="${cg_file}.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;" alt="${cg_file}" onerror="if(this.getAttribute('src') !== '${kind}.jpg') this.src='${kind}.jpg'; else this.style.opacity='0';">`;
@@ -303,10 +305,12 @@ const DEPAN = {
 };
 
 /* warna lantai untuk menyambung lapisan depan sampai ke dasar layar */
-const TANAH = { class:'#0b0810', canteen:'#0b0806', library:'#08090e', park:'#080c07',
-                phone:'#05080d', boss1:'#07050c', boss2:'#0a0604', crack:'#08050a' };
+const TANAH = {
+  class: '#0b0810', canteen: '#0b0806', library: '#08090e', park: '#080c07',
+  phone: '#05080d', boss1: '#07050c', boss2: '#0a0604', crack: '#08050a'
+};
 
-function pasangDepan(kind){
+function pasangDepan(kind) {
   const host = document.getElementById('depan');
   if (!host) return;
   if (host.dataset.k === kind) return;
@@ -315,6 +319,6 @@ function pasangDepan(kind){
   const tanah = TANAH[kind] || '#08060d';
   host.innerHTML = isi
     ? `<svg viewBox="0 0 390 620" preserveAspectRatio="xMidYMin meet" aria-hidden="true">`
-      + `<rect x="-20" y="150" width="430" height="480" fill="${tanah}"/>${isi}</svg>`
+    + `<rect x="-20" y="150" width="430" height="480" fill="${tanah}"/>${isi}</svg>`
     : '';
 }
