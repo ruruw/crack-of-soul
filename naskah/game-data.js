@@ -457,7 +457,7 @@ const NASKAH = [
           },
           {
             "who": null,
-            "text": "({NAMA} duduk membelakangi mereka di tengah kantin, memegang sendoknya dan membeku. Kelompok murid di meja belakang melirik ke arahnya sambil pura-pura sibuk.)"
+            "text": "{NAMA} duduk membelakangi mereka di tengah kantin, memegang sendoknya dan membeku. Kelompok murid di meja belakang melirik ke arahnya sambil pura-pura sibuk."
           },
           {
             "who": "Perempuan 1",
@@ -550,7 +550,7 @@ const NASKAH = [
               {
                 "who": "Teman 3",
                 "text": "\"Yaelah... cuma bercanda.\"",
-                "aksi": "(Sambil memutar bola mata malas)"
+                "aksi": "Sambil memutar bola mata malas"
               },
               {
                 "who": "{NAMA}",
@@ -938,7 +938,7 @@ const NASKAH = [
           {
             "who": "Laki-laki 1",
             "text": "\"Dia tuh nggak jahat sih, cuma... bikin risih aja kalau lewat di depan kita.\"",
-            "aksi": "(Mengangkat bahu)"
+            "aksi": "Mengangkat bahu"
           },
           {
             "who": "Perempuan 3",
@@ -1124,7 +1124,7 @@ const NASKAH = [
           },
           {
             "who": null,
-            "text": "({NAMA} duduk membelakangi mereka di meja baca, menunduk memegang pulpen dan buku catatan. Kelompok murid di meja belakang berbisik-bisik sambil pura-pura membuka buku.)"
+            "text": "{NAMA} duduk membelakangi mereka di meja baca, menunduk memegang pulpen dan buku catatan. Kelompok murid di meja belakang berbisik-bisik sambil pura-pura membuka buku."
           },
           {
             "who": "Perempuan 1",
@@ -1244,11 +1244,8 @@ const NASKAH = [
               },
               {
                 "who": "Teman 1",
-                "text": "(Melihat {NAMA} pergi dari perpustakaan)"
-              },
-              {
-                "who": null,
-                "text": "\"Eh, pergi tuh.\""
+                "text": "\"Eh, pergi tuh.\"",
+                "aksi": "Melihat {NAMA} pergi dari perpustakaan"
               },
               {
                 "who": "Teman 2",
@@ -1318,10 +1315,6 @@ const NASKAH = [
               {
                 "who": null,
                 "text": "{NAMA} merasa lebih tenang karena berani meminta bantuan kepada orang yang tepat. Ia dapat melanjutkan belajarnya tanpa gangguan dan menyadari bahwa mencari pertolongan bukanlah tanda kelemahan."
-              },
-              {
-                "who": null,
-                "text": "Setelah menjawab semua pertanyaannya, akan muncul penjelasan mengenai jenis bully yang dirasakan oleh korban. Berupa deskripsi, contoh dari tindakan tersebut, apa tindakan yang harus kita lakukan dan apa dampaknya dalam kehidupan kita. Desain visualisasi yang dapat digunakan contohnya seperti ini:"
               }
             ]
           }
@@ -1334,7 +1327,7 @@ const NASKAH = [
     "tipe": "boss",
     "level": "Boss 1",
     "nama": "Negative Thoughts",
-    "bg": "boss1",
+    "bg": "cg_boss1",
     "giliran": [
       {
         "label": "1",
