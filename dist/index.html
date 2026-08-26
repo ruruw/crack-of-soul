@@ -2266,19 +2266,13 @@ const NASKAH = [
               },
               {
                 "who": "Teman 1",
-                "text": "(mendatangi {NAMA})"
-              },
-              {
-                "who": null,
-                "text": "\"Lemari berjalan marah nih!\""
+                "text": "\"Lemari berjalan marah nih!\"",
+                "aksi": "mendatangi {NAMA}"
               },
               {
                 "who": "{NAMA}",
-                "text": "(Berbicara dengan nada marah)"
-              },
-              {
-                "who": null,
-                "text": "\"Kalian puas terus menghina aku?\""
+                "text": "\"Kalian puas terus menghina aku?\"",
+                "aksi": "Berbicara dengan nada marah"
               },
               {
                 "who": "Teman 2",
@@ -4958,6 +4952,8 @@ const KATA_LATAR = [
   [/\b(berhenti menulis\. Tangan yang memegang pulpen menegang)\b/i, 'cg_l1_perpus'],
   [/\b(Suasana perpustakaan yang seharusnya tenang berubah menjadi tidak nyaman)\b/i, 'cg_l1_perpus_sedih'],
   [/\b(Meskipun ejekan masih terdengar beberapa saat)\b/i, 'cg_l1_perpus_diam'],
+  [/\b(Suara mereka semakin keras hingga mengganggu pengunjung perpustakaan lainnya)\b/i, 'cg_l1_perpus_marah'],
+  [/\b(pertengkaran membuat suasana perpustakaan)\b/i, 'cg_l1_perpus_marah'],
   [/\b(memilih tetap duduk dan melanjutkan membaca bukunya)\b/i, 'cg_l3_diam'],
   [/\b(berdiri dan membalas semua ejekan)\b/i, 'cg_l3_marah'],
   [/\b(memilih menutup bukunya(,| dan) memasukkannya ke dalam tas)\b/i, 'cg_l3_pergi'],

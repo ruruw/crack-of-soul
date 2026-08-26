@@ -1021,19 +1021,13 @@ const NASKAH = [
               },
               {
                 "who": "Teman 1",
-                "text": "(mendatangi {NAMA})"
-              },
-              {
-                "who": null,
-                "text": "\"Lemari berjalan marah nih!\""
+                "text": "\"Lemari berjalan marah nih!\"",
+                "aksi": "mendatangi {NAMA}"
               },
               {
                 "who": "{NAMA}",
-                "text": "(Berbicara dengan nada marah)"
-              },
-              {
-                "who": null,
-                "text": "\"Kalian puas terus menghina aku?\""
+                "text": "\"Kalian puas terus menghina aku?\"",
+                "aksi": "Berbicara dengan nada marah"
               },
               {
                 "who": "Teman 2",
