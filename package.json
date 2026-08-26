@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "node build-game.js && cp TheCrackOfSoul-v2.html dist/index.html && python3 inject_pwa.py"
+  },
   "dependencies": {
     "playwright": "^1.62.1"
   }

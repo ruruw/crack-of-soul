@@ -1,0 +1,59 @@
+--- INTRO ---
+Setelah jam istirahat berakhir, {NAMA} pergi ke perpustakaan untuk mengerjakan tugas kelompok yang harus dikumpulkan hari itu. Ia memilih duduk di sudut ruangan agar dapat membaca dan menyelesaikan tugas dengan tenang.
+Beberapa menit kemudian, sekelompok siswa yang sebelumnya mengejek {NAMA} di kantin kembali melihatnya. Mereka mendekati meja {NAMA} sambil tertawa pelan agar tidak menarik perhatian petugas perpustakaan. Tanpa rasa bersalah, mereka kembali melontarkan ejekan mengenai bentuk tubuh {NAMA}.
+({NAMA} duduk membelakangi mereka di meja baca, menunduk memegang pulpen dan bukunya. Kelompok murid di meja belakang berbisik-bisik sambil pura-pura baca buku.)
+Perempuan 1: (Berbisik lumayan keras ke samping)
+"Lihat deh si {NAMA}... Duduk di situ terus. Makan tempat banget nggak sih?"
+({NAMA} berhenti menulis. Tangan yang memegang pulpen menegang, dia makin menundukkan kepala.)
+Laki-laki 2: (Sambil memutar-mutar pensil)
+"Kemarin aja aku mau ambil buku di lorong rak tempat dia berdiri, langsung balik badan. Jalannya ketutup semua sama dia."
+Laki-laki 1: (Mengangkat bahu)
+"Dia tuh nggak jahat sih, cuma... bikin risih aja kalau lewat di depan kita."
+Perempuan 3: (Memutar bola mata)
+"Makanya kalau dia berdiri mau lewat, aku sengaja geser jauh-jauh. Malas aja kalau sampai kesenggol."
+Laki-laki 2: (Menegur pelan setengah bercanda)
+"Pelan-pelan, ntar orangnya dengar."
+Laki-laki 1: (Terkekeh dingin)
+“Gapapa lah, biarin aja”
+Suasana perpustakaan yang seharusnya tenang berubah menjadi tidak nyaman bagi {NAMA}. Ia berusaha tetap fokus membaca, tetapi ejekan itu membuatnya sulit berkonsentrasi.
+Kini pemain harus menentukan tindakan {NAMA}.
+
+--- OPSI ---
+
+Opsi 1: Tetap membaca dan mengabaikan ejekan
+{NAMA} memilih tetap duduk dan melanjutkan membaca bukunya. Ia tidak ingin membuat keributan di perpustakaan. Meskipun ejekan masih terdengar beberapa saat, {NAMA} berusaha mengendalikan emosinya hingga akhirnya para siswa tersebut pergi karena bosan.
+{NAMA}: "Aku harus fokus sama tugasku. Jangan sampai mereka mengganggu tujuanku."
+
+Opsi 2: Membalas ejekan
+{NAMA} tidak mampu lagi menahan emosinya. Ia berdiri dan membalas semua ejekan yang ditujukan kepadanya. Suara mereka semakin keras hingga mengganggu pengunjung perpustakaan lainnya.
+Teman 1: (mendatangi {NAMA})
+"Lemari berjalan marah nih!"
+{NAMA}: (Berbicara dengan nada marah)
+"Kalian puas terus menghina aku?"
+Teman 2: "Yaelah, bercanda doang."
+{NAMA}: "Kalau itu bercanda, kenapa kalian terus melakukannya?"
+Teman 3: "Santai aja kali."
+{NAMA}: "Aku datang ke sini buat belajar, bukan buat jadi bahan ejekan kalian!"
+Narasi Penutup:
+Pertengkaran membuat suasana perpustakaan menjadi gaduh. {NAMA} berhasil meluapkan emosinya, tetapi masalah belum benar-benar selesai.
+
+Opsi 3: Pergi Dari Perpustakaan
+{NAMA} memilih menutup bukunya, memasukkannya ke dalam tas, lalu meninggalkan perpustakaan. Ia mencari tempat lain yang lebih tenang agar dapat melanjutkan tugasnya tanpa terus mendengar ejekan.
+Teman 1: (Melihat {NAMA} pergi dari perpustakaan)
+"Eh, pergi tuh."
+Teman 2: "Baper banget."
+{NAMA}: "Lebih baik aku mencari tempat lain daripada terus mendengar mereka."
+Narasi Penutup
+{NAMA} berhasil menghindari situasi yang membuatnya tidak nyaman, tetapi ejekan tersebut masih terus teringat di pikirannya.
+
+Opsi 4: Meminta bantuan petugas perpustakaan
+{NAMA} memutuskan menghampiri petugas perpustakaan dan menjelaskan bahwa beberapa siswa terus mengganggunya saat belajar. Petugas segera mendatangi kelompok siswa tersebut dan memberikan teguran karena telah mengganggu ketenangan perpustakaan sekaligus melakukan perundungan.
+{NAMA}: "Permisi, Bu. Saya ingin melapor."
+Petugas Perpustakaan: "Ada yang bisa saya bantu?"
+{NAMA}: "Beberapa teman terus mengejek saya saat sedang belajar. Saya jadi tidak bisa fokus mengerjakan tugas."
+Petugas: "Terima kasih sudah melapor. Saya akan menanganinya."
+Petugas: "Perpustakaan adalah tempat belajar. Tolong hentikan tindakan kalian yang mengganggu dan menghina teman."
+Teman: "Maaf, Bu... Maaf juga, {NAMA}."
+{NAMA}: "Terima kasih. Saya hanya ingin belajar dengan tenang."
+Narasi Penutup:
+{NAMA} merasa lebih tenang karena berani meminta bantuan kepada orang yang tepat. Ia berhasil menyelesaikan tugasnya tanpa gangguan lagi.

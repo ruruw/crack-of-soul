@@ -1,0 +1,11 @@
+--- KURUS ---
+Opsi 1: {NAMA} memilih tetap duduk dan berusaha fokus menghabiskan makanannya. Ia tidak ingin mencari masalah dan berharap teman-temannya segera bosan mengejeknya. Namun, mereka terus tertawa dan melemparkan komentar hingga akhirnya pergi sendiri.
+Opsi 2: {NAMA} tidak tahan lagi mendengar hinaan yang terus dilontarkan kepadanya. Ia berdiri dan membalas perkataan mereka. Suasana kantin menjadi ramai karena beberapa siswa mulai memperhatikan keributan tersebut.
+Opsi 3: {NAMA} memilih mengangkat makanannya lalu berjalan meninggalkan kantin. Ia mencari tempat yang lebih sepi agar bisa makan dengan tenang tanpa harus mendengar ejekan lagi.
+Opsi 4: {NAMA} memilih mendekati guru piket yang sedang berada di sekitar kantin. Ia menceritakan bahwa dirinya terus diejek saat sedang makan. Guru kemudian menghampiri kelompok siswa tersebut dan memberikan teguran.
+
+--- GEMUK ---
+Opsi 1: {NAMA} memilih tetap duduk dan mencoba mengabaikan semua ejekan yang diterimanya. Ia berharap teman-temannya akan berhenti jika tidak ditanggapi. Namun, mereka justru semakin tertawa dan terus mengomentari tubuhnya hingga akhirnya pergi sendiri.
+Opsi 2: {NAMA} tidak mampu lagi menahan emosinya. Ia berdiri dari kursinya dan membalas semua perkataan teman-temannya. Suasana kantin menjadi gaduh karena banyak siswa mulai memperhatikan keributan tersebut.
+Opsi 3: {NAMA} memilih mengangkat makanannya lalu meninggalkan kantin. Ia mencari tempat yang lebih tenang agar bisa menghabiskan makan siangnya tanpa terus mendengar ejekan.
+Opsi 4: {NAMA} memutuskan untuk meminta bantuan. Ia menghampiri guru piket yang berada di sekitar kantin dan menceritakan apa yang baru saja dialaminya. Guru kemudian mendatangi kelompok siswa tersebut dan memberikan teguran karena telah melakukan perundungan.

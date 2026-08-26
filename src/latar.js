@@ -160,19 +160,24 @@ const LATAR = {
   </g>`
 };
 
-/* Tebak lokasi dari kalimat narasi. Dipakai untuk mengganti latar
-   di tengah adegan kalau ceritanya benar-benar berpindah tempat. */
 const KATA_LATAR = [
-  [/\b(mencoba mengabaikan semua ejekan yang diterimanya)\b/i, 'cg_l2_diam'],
-  [/\b(membalas semua perkataan teman-temannya)\b/i, 'cg_l2_marah'],
-  [/\b(mengangkat makanannya lalu meninggalkan kantin|meninggalkan kantin\. Ia mencari tempat yang lebih tenang)\b/i, 'cg_l2_pergi'],
-  [/\b(menghampiri guru piket yang berada di sekitar kantin)\b/i, 'cg_l2_lapor'],
+  [/\b(pergi ke perpustakaan untuk mengerjakan tugas kelompok)\b/i, 'cg_l3_perpus'],
+  [/\b(memilih tetap duduk dan melanjutkan membaca bukunya)\b/i, 'cg_l3_diam'],
+  [/\b(berdiri dan membalas semua ejekan)\b/i, 'cg_l3_marah'],
+  [/\b(memilih menutup bukunya(,| dan) memasukkannya ke dalam tas)\b/i, 'cg_l3_pergi'],
+  [/\b(menghampiri petugas perpustakaan dan menjelaskan)\b/i, 'cg_l3_lapor'],
+  [/\b(mencoba mengabaikan semua ejekan yang diterimanya|berusaha fokus menghabiskan makanannya)\b/i, 'cg_l2_diam'],
+  [/\b(membalas semua perkataan teman-temannya|membalas perkataan mereka\. Suasana kantin menjadi ramai)\b/i, 'cg_l2_marah'],
+  [/\b(mengangkat makanannya lalu( berjalan)? meninggalkan kantin|meninggalkan kantin\. Ia mencari tempat yang lebih tenang|menemukan bangku kosong di taman|berhasil menjauh dari situasi)\b/i, 'cg_l2_pergi'],
+  [/\b((menghampiri|mendekati) guru piket yang (sedang )?berada di sekitar kantin)\b/i, 'cg_l2_lapor'],
   [/\b(diam dan menahan|menahan tangis|menggenggam ujung bajunya|menganggap diamnya|bertahan diam)\b/i, 'cg_l1_diam'],
   [/\b(tidak mampu lagi menahan emosinya|membalas semua ejekan|marah nih)\b/i, 'cg_l1_marah'],
   [/\b(menghampiri guru untuk menceritakan|ingin bicara sebentar|mendekati guru piket|menghampiri guru piket)\b/i, 'cg_l1_lapor'],
+  [/\b(Guru memanggil siswa yang mengejek)\b/i, 'cg_l1_guru_marah'],
   [/\b(jam istirahat,.*?menghampiri teman|teman yang paling ia percaya)\b/i, 'cg_l1_teman'],
   [/\b(pergi ke kantin untuk makan siang seorang diri)\b/i, 'cg_l2_kantin'],
   [/\b(duduk membelakangi mereka di tengah kantin)\b/i, 'cg_l2_kantin_2'],
+  [/\b(berhenti menulis\. Tangan yang memegang pulpen menegang)\b/i, 'cg_l1_perpus'],
   [/\b(kantin|kanti|jajan|meja makan|antre makan)\b/i, 'canteen'],
   [/\b(perpustakaan|perpus|rak buku|meja baca)\b/i,     'library'],
   [/\b(taman|lapangan|halaman sekolah|luar kelas|gerbang)\b/i, 'park'],
