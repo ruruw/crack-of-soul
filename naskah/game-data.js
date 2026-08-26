@@ -1067,11 +1067,8 @@ const NASKAH = [
               },
               {
                 "who": "Teman 1",
-                "text": "(Melihat {NAMA} pergi dari perpustakaan)"
-              },
-              {
-                "who": null,
-                "text": "\"Eh, pergi tuh.\""
+                "text": "\"Eh, pergi tuh.\"",
+                "aksi": "Melihat {NAMA} pergi dari perpustakaan"
               },
               {
                 "who": "Teman 2",
