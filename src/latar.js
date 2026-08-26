@@ -172,7 +172,7 @@ const KATA_LATAR = [
   [/\b(memilih tetap duduk dan melanjutkan membaca bukunya)\b/i, 'cg_l3_diam'],
   [/\b(berdiri dan membalas semua ejekan)\b/i, 'cg_l3_marah'],
   [/\b(memilih menutup bukunya(,| dan) memasukkannya ke dalam tas)\b/i, 'cg_l1_perpus_pergi'],
-  [/\b(menghampiri petugas perpustakaan dan menjelaskan)\b/i, 'cg_l3_lapor'],
+  [/\b(menghampiri petugas perpustakaan dan menjelaskan)\b/i, 'cg_l1_perpus_lapor'],
   [/\b(mencoba mengabaikan semua ejekan yang diterimanya|berusaha fokus menghabiskan makanannya)\b/i, 'cg_l2_diam'],
   [/\b(membalas semua perkataan teman-temannya|membalas perkataan mereka\. Suasana kantin menjadi ramai)\b/i, 'cg_l2_marah'],
   [/\b(mengangkat makanannya lalu( berjalan)? meninggalkan kantin|meninggalkan kantin\. Ia mencari tempat yang lebih tenang|menemukan bangku kosong di taman|berhasil menjauh dari situasi)\b/i, 'cg_l2_pergi'],
