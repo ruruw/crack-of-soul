@@ -246,6 +246,42 @@
   .link{width:44px;height:2px;background:var(--line)}
   .link.buka{background:var(--acc)}
 
+  /* ---- edu screen ---- */
+  #sEdu { padding: 16px; align-items: stretch; justify-content: flex-start; }
+  .edu-container { display: flex; flex-direction: column; gap: 16px; text-align: left; max-width: 440px; margin: 0 auto; width: 100%; }
+  .edu-left { display: flex; flex-direction: column; gap: 12px; }
+  .edu-img-panel { border: 1px solid rgba(124,107,214,.3); border-radius: 12px; padding: 14px; background: rgba(20,15,28,.8); position: relative; }
+  .edu-sub { font-size: 11px; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 2px; }
+  .edu-title { font-size: 24px; font-style: italic; font-weight: 800; background: linear-gradient(135deg, #a78bfa, #c084fc); -webkit-background-clip: text; color: transparent; margin: 0 0 8px 0; text-transform: uppercase; }
+  .edu-desc { font-size: 13px; color: #d1d5db; line-height: 1.5; margin: 0 0 12px 0; }
+  .edu-img-placeholder { height: 140px; border-radius: 8px; background: rgba(0,0,0,0.4); border: 1px dashed rgba(255,255,255,0.1); display: none; }
+  .edu-box { border: 1px solid rgba(124,107,214,.3); border-radius: 12px; padding: 14px; background: rgba(20,15,28,.8); }
+  .edu-box-title { font-size: 11px; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; }
+  .edu-reward-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 13px; color: #e5e7eb; }
+  .edu-reward-item:last-child { margin-bottom: 0; }
+  .edu-reward-item .i { font-size: 16px; margin-right: 8px; }
+  .edu-reward-item .v { font-weight: bold; color: var(--muted); }
+  .edu-reward-item .v.check { color: #4ade80; }
+  .edu-map-track { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+  .track-dot { flex: 1; text-align: center; font-size: 9px; color: #6b7280; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .track-dot::before { content: "🔒"; font-size: 16px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid #4b5563; background: #1f2937; }
+  .track-dot.active { color: #a855f7; }
+  .track-dot.active::before { content: "😈"; border-color: #a855f7; background: rgba(168,85,247,0.2); box-shadow: 0 0 8px rgba(168,85,247,0.5); }
+  .track-line { width: 24px; height: 1px; background: #4b5563; margin-top: -12px; }
+  
+  .edu-right { display: flex; flex-direction: column; gap: 12px; }
+  .edu-grid { display: flex; flex-direction: column; gap: 12px; }
+  .edu-box-header { font-size: 13px; font-weight: bold; color: #c084fc; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; }
+  .edu-box p { font-size: 13px; color: #d1d5db; line-height: 1.5; margin: 0; }
+  .edu-box.highlight { border-color: #f59e0b; background: rgba(245,158,11,0.1); }
+  .edu-box.highlight .edu-box-header { color: #fcd34d; }
+  .edu-list { list-style: none; padding: 0; margin: 0; font-size: 13px; color: #d1d5db; display: flex; flex-direction: column; gap: 6px; }
+  .edu-list li { display: flex; gap: 8px; align-items: flex-start; line-height: 1.4; }
+  .edu-list li::before { content: "•"; color: #8b5cf6; }
+  .edu-list.check li::before { content: "✓"; color: #10b981; }
+  .edu-list.heart li::before { content: "💜"; color: #c084fc; font-size: 10px; padding-top: 2px; }
+  .btn-lanjut { background: linear-gradient(135deg, #7e22ce, #9333ea); border: none; color: white; box-shadow: 0 4px 14px rgba(147,51,234,0.4); text-transform: uppercase; letter-spacing: 1px; width: 100%; margin-top: 0; }
+
   /* ---- boss ---- */
   #bosshud{position:relative;z-index:6;padding:2px 13px 6px;display:none}
   #bosshud.on{display:block}
@@ -1133,6 +1169,103 @@
   <button class="btn" id="lvGo">Lanjut</button>
 </div>
 
+<div class="scr" id="sEdu">
+  <div class="edu-container">
+    <div class="edu-left">
+      <div class="edu-img-panel">
+        <div class="edu-sub">LEVEL 1 COMPLETE!</div>
+        <h1 class="edu-title">VERBAL BULLYING</h1>
+        <p class="edu-desc">Kamu telah mengalahkan Negative Thoughts! Sekarang, mari pahami lebih dalam tentang verbal bullying dan bagaimana kita bisa menciptakan lingkungan yang lebih positif.</p>
+        <div class="edu-img-placeholder">
+          <!-- Illustration place -->
+        </div>
+      </div>
+      
+      <div class="edu-box">
+        <div class="edu-box-title">REWARD DIDAPATKAN</div>
+        <div class="edu-reward-item"><span class="i">🌸</span><span>Hope</span><span class="v check">✓ +10</span></div>
+        <div class="edu-reward-item"><span class="i">⭐</span><span>Courage</span><span class="v">+5</span></div>
+        <div class="edu-reward-item"><span class="i">🛡️</span><span>Badge</span><span class="v">Self Worth</span></div>
+      </div>
+      
+      <div class="edu-box">
+        <div class="edu-box-title">PERJALANANMU</div>
+        <div class="edu-map-track">
+          <div class="track-dot active">LEVEL 1</div>
+          <div class="track-line"></div>
+          <div class="track-dot">LEVEL 2</div>
+          <div class="track-line"></div>
+          <div class="track-dot">LEVEL 3</div>
+          <div class="track-line"></div>
+          <div class="track-dot">FINAL BOSS</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="edu-right">
+      <div class="edu-grid">
+        <div class="edu-box span-2">
+          <div class="edu-box-header"><span class="i">💬</span> APA ITU VERBAL BULLYING?</div>
+          <p>Verbal bullying adalah tindakan menyakiti orang lain melalui kata-kata yang menghina, mengejek, mengancam, mempermalukan, atau merendahkan. Meskipun tidak meninggalkan luka fisik, dampaknya dapat memengaruhi kesehatan mental, rasa percaya diri, dan kehidupan sosial seseorang.</p>
+        </div>
+        
+        <div class="edu-box highlight">
+          <div class="edu-box-header"><span class="i">⭐</span> INGAT!</div>
+          <p>Kata-kata dapat melukai, tapi juga dapat menyembuhkan. Gunakan kata-kata untuk menyemangati, bukan menyakiti.</p>
+        </div>
+        
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">📢</span> CONTOH PERILAKU VERBAL BULLYING</div>
+          <ul class="edu-list">
+            <li>Mengejek bentuk tubuh atau penampilan</li>
+            <li>Memberi julukan yang menyakitkan</li>
+            <li>Menghina warna kulit, suku, atau agama</li>
+            <li>Mengolok-olok kemampuan seseorang</li>
+            <li>Mempermalukan di depan teman-teman</li>
+          </ul>
+        </div>
+        
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">💔</span> DAMPAKNYA</div>
+          <ul class="edu-list">
+            <li>Kehilangan rasa percaya diri</li>
+            <li>Sedih berkepanjangan dan stres</li>
+            <li>Takut berteman dan menarik diri</li>
+            <li>Prestasi belajar menurun</li>
+            <li>Gangguan kesehatan mental</li>
+          </ul>
+        </div>
+        
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">🛡️</span> APA YANG HARUS DILAKUKAN?</div>
+          <ul class="edu-list check">
+            <li>Jangan membalas dengan ejekan atau kata-kata buruk.</li>
+            <li>Katakan bahwa tindakan tersebut tidak baik.</li>
+            <li>Ceritakan kepada guru, orang tua, atau orang dewasa yang dipercaya.</li>
+            <li>Tetap bersama teman yang mendukungmu.</li>
+            <li>Ingat bahwa ejekan bukan gambaran dirimu.</li>
+          </ul>
+        </div>
+        
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">👥</span> MENJADI TEMAN YANG BAIK</div>
+          <ul class="edu-list heart">
+            <li>Berani membela teman yang diejek.</li>
+            <li>Mengajak korban bermain dan berbicara.</li>
+            <li>Menghargai perbedaan dan tidak ikut mengejek.</li>
+            <li>Mengingatkan pelaku dengan sopan.</li>
+            <li>Menciptakan lingkungan yang nyaman untuk semua.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="btn btn-lanjut" id="eduGo">LANJUT KE LEVEL 2 &raquo;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="scr" id="sOver">
   <div class="sub">Berhenti Sejenak</div>
   <h1 style="font-size:clamp(20px,5.5vw,28px)">Hari ini terasa<br>terlalu berat.</h1>
@@ -1536,6 +1669,10 @@ function lanjutBaris(v){
     }
     ketik(isi(b.text), b.who ? isi(b.who) : '', b.aksi ? isi(b.aksi) : '');
     simpanProgress();
+  } else if (S._dalamPenutupBoss) {
+    S._dalamPenutupBoss = false;
+    S._selesaiBoss = true;
+    maju();
   } else if(!S._dalamOpsi){
     pilihanAktif = v.opsi; sesudahKetik();
   } else {
@@ -1621,11 +1758,20 @@ function jawabBoss(o){
 }
 function bossKalah(){
   Audio2.play('bossKalah');
-  const teks = bossState.penutup.map(g=>g.serangan).filter(Boolean).join('\n\n')
-    || 'Boss retak dan menghilang.';
-  antrian = [{who:null, text:teks}]; idxAntrian=0; pilihanAktif=null;
-  ketik(isi(teks), '');
-  S._selesaiBoss = true;
+  const penutup = bossState.penutup[bossState.penutup.length - 1];
+  
+  if (penutup && penutup.lines) {
+    antrian = penutup.lines.slice();
+    idxAntrian = 0;
+    pilihanAktif = null;
+    S._dalamPenutupBoss = true;
+    lanjutBaris(null);
+  } else {
+    const teks = bossState.penutup.map(g=>g.serangan).filter(Boolean).join('\n\n') || 'Boss retak dan menghilang.';
+    antrian = [{who:null, text:teks}]; idxAntrian=0; pilihanAktif=null;
+    ketik(isi(teks), '');
+    S._selesaiBoss = true;
+  }
   simpanProgress();
 }
 
@@ -1636,7 +1782,7 @@ function maju(){
   if(S._selesaiBoss){ S._selesaiBoss=false; return levelSelesai(); }
   const v = adegan.tipe==='boss' ? null :
     (adegan.varian[S.varian] || adegan.varian.umum || Object.values(adegan.varian)[0]);
-  if(adegan.tipe==='boss') return;
+  if(adegan.tipe==='boss' && !S._dalamPenutupBoss) return;
   lanjutBaris(v);
 }
 $('stage').addEventListener('click', e=>{ if(e.target.closest('.ch')) return; maju(); });
@@ -1649,11 +1795,16 @@ function levelSelesai(){
   const lvl = adegan.level;
   if(S.langkah >= URUTAN.length) return tampilEnding();
   ubahStat(PULIH);
-  $('lvKind').textContent = 'Level Selesai';
-  $('lvTitle').textContent = lvl + ' terlewati';
-  $('lvBody').textContent = 'Kamu berhasil menghadapi ' + adegan.nama +
-    '. Ketiga statusmu pulih ' + PULIH + ' poin sebelum melanjutkan.';
-  buka('sLevel');
+  
+  if (lvl === 'Boss 1' || lvl === 'Level 1') {
+    buka('sEdu');
+  } else {
+    $('lvKind').textContent = 'Level Selesai';
+    $('lvTitle').textContent = lvl + ' terlewati';
+    $('lvBody').textContent = 'Kamu berhasil menghadapi ' + adegan.nama +
+      '. Ketiga statusmu pulih ' + PULIH + ' poin sebelum melanjutkan.';
+    buka('sLevel');
+  }
 }
 function gameOver(){
   Audio2.play('gameOver'); Audio2.berhenti();
@@ -1787,6 +1938,7 @@ function tampilPeta(){
 }
 if($('petaGo')) $('petaGo').onclick = ()=>{ Audio2.play('klik'); tutup(); updateStat(); mulaiLangkah(); };
 if($('lvGo')) $('lvGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
+if($('eduGo')) $('eduGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('overGo')) $('overGo').onclick = ()=>{ Audio2.play('klik'); ulangiAdegan(); };
 if($('endGo')) $('endGo').onclick = ()=>location.reload();
 const cbPause = ()=>{ Audio2.play('klik'); buka(S && S.nama ? 'sPause' : 'sMenu'); };

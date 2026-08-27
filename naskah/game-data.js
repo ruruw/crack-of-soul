@@ -1417,7 +1417,40 @@ const NASKAH = [
       {
         "label": "Terakhir",
         "final": true,
-        "serangan": "Boss mulai retak. Kalau begitu... siapa dirimu sebenarnya? Aku bukan apa yang orang lain katakan tentangku. Boss mulai melemah. Tidak... jangan percaya pada dirimu sendiri... Korban: Aku punya kekurangan, tetapi itu tidak membuatku tidak berharga. Boss hancur. Narasi Akhir Korban menyadari bahwa perkataan orang lain tidak menentukan nilai dirinya. Luka dari bullying mungkin belum sepenuhnya hilang, tetapi kini ia tahu bahwa ia tidak harus mempercayai setiap kata buruk yang diberikan kepadanya. Setelah pemain menyelesaikan boss level, makan akan ada petunjuk untuk mengarah pada peta berikutnya. Setelah semua tindakan yang dilakukan pada level satu sesuai dengan harapan, maka kunci untuk level berikutnya terbuka dan pemain langsung diarahkan untuk bermain ke level 2 scene 1. Untuk level selanjutnya bentuknya sama seperti level 1 namun yang membedakan adalah latar tempatnya dan tindakan yang dilakukan oleh pelaku bully.",
+        "lines": [
+          {
+            "who": null,
+            "text": "Boss mulai retak."
+          },
+          {
+            "who": "Negative Thoughts",
+            "text": "“Kalau begitu... siapa dirimu sebenarnya?”"
+          },
+          {
+            "who": "{NAMA}",
+            "text": "“Aku bukan apa yang orang lain katakan tentangku.”"
+          },
+          {
+            "who": null,
+            "text": "Boss mulai melemah."
+          },
+          {
+            "who": "Negative Thoughts",
+            "text": "“Tidak... jangan percaya pada dirimu sendiri...”"
+          },
+          {
+            "who": "{NAMA}",
+            "text": "“Aku punya kekurangan, tetapi itu tidak membuatku tidak berharga.”"
+          },
+          {
+            "who": null,
+            "text": "Boss hancur."
+          },
+          {
+            "who": null,
+            "text": "Korban menyadari bahwa perkataan orang lain tidak menentukan nilai dirinya. Luka dari bullying mungkin belum sepenuhnya hilang, tetapi kini ia tahu bahwa ia tidak harus mempercayai setiap kata buruk yang diberikan kepadanya."
+          }
+        ],
         "opsi": []
       }
     ]
@@ -2532,7 +2565,7 @@ const NASKAH = [
       {
         "label": "5",
         "final": false,
-        "serangan": "Kejadian itu akan terus menghantuimu. Kamu tidak akan pernah berani lagi. Serangan Terakhir Kalau kamu masih takut, berarti aku menang. Tidak. Berani bukan berarti tidak pernah takut. Berani berarti aku tetap mencari cara untuk melindungi diriku meskipun aku merasa takut. FEAR mulai menghilang. Narasi Akhir Korban memahami bahwa rasa takut adalah sesuatu yang wajar setelah mengalami perlakuan buruk. Namun, rasa takut tidak harus mengendalikan seluruh kehidupannya.",
+        "serangan": "Kejadian itu akan terus menghantuimu. Kamu tidak akan pernah berani lagi.",
         "opsi": [
           {
             "label": "A",
@@ -2545,6 +2578,29 @@ const NASKAH = [
             "benar": true
           }
         ]
+      },
+      {
+        "label": "Terakhir",
+        "final": true,
+        "lines": [
+          {
+            "who": "FEAR",
+            "text": "“Kalau kamu masih takut, berarti aku menang.”"
+          },
+          {
+            "who": "{NAMA}",
+            "text": "“Tidak. Berani bukan berarti tidak pernah takut. Berani berarti aku tetap mencari cara untuk melindungi diriku meskipun aku merasa takut.”"
+          },
+          {
+            "who": null,
+            "text": "FEAR mulai menghilang."
+          },
+          {
+            "who": null,
+            "text": "Korban memahami bahwa rasa takut adalah sesuatu yang wajar setelah mengalami perlakuan buruk. Namun, rasa takut tidak harus mengendalikan seluruh kehidupannya."
+          }
+        ],
+        "opsi": []
       }
     ]
   },
@@ -3070,7 +3126,7 @@ const NASKAH = [
       {
         "label": "5",
         "final": false,
-        "serangan": "Mereka hanya kasihan kepadamu. Serangan Terakhir Final Boss Kalau begitu... siapa dirimu sebenarnya? Layar menjadi gelap. Muncul tiga pilihan. Boss kembali menguat Boss melemah Support system aktif kembali Pada tahap ini, pemain mulai memahami bahwa melawan bullying bukan berarti harus melawan semuanya sendirian. Mencari bantuan dan mendapatkan dukungan juga merupakan bentuk keberanian. Maka The Crack of Soul berhasil dikalahkan. Boss berkata: Tidak…kamu tidak lagi mempercayai kata-kataku Kemudian The Crack of Soul retak dan menghilang. Narasi kemenangan: {NAMA} akhirnya menyadari bahwa dirinya tidak ditentukan oleh perkataan orang lain. Ia mungkin memiliki kekurangan dan pernah terluka, tetapi ia tetap memiliki nilai dan berhak mendapatkan dukungan. Setelah berhasil mengalahkan Final boss, pemain akan diarahkan true ending atau akhir dari game tersebut. Didalam true ending ini terdapat beberapa kolom bagian, diantaranya rangkuman perjalanan yang telah terselesaikan, Statistik akhir atau jumlah poin yang telah didapatkan, pelajaran penting yang dapat diambil, tombol menu dan tombol untuk mengakhiri.",
+        "serangan": "Mereka hanya kasihan kepadamu.",
         "opsi": [
           {
             "label": "A",
@@ -3081,23 +3137,35 @@ const NASKAH = [
             "label": "B",
             "text": "Aku tetap pantas mendapatkan bantuan",
             "benar": true
-          },
-          {
-            "label": "A",
-            "text": "Aku adalah apa yang orang lain katakan tentangku.",
-            "benar": false
-          },
-          {
-            "label": "B",
-            "text": "Aku punya kekurangan, tetapi aku tetap berharga.",
-            "benar": true
-          },
-          {
-            "label": "C",
-            "text": "Aku tidak harus menghadapi semuanya sendirian. Aku akan meminta bantuan ketika membutuhkannya.",
-            "benar": true
           }
         ]
+      },
+      {
+        "label": "Terakhir",
+        "final": true,
+        "lines": [
+          {
+            "who": "The Crack of Soul",
+            "text": "“Kalau begitu... siapa dirimu sebenarnya?”"
+          },
+          {
+            "who": "{NAMA}",
+            "text": "“Aku punya kekurangan, tetapi aku tetap berharga. Aku tidak harus menghadapi semuanya sendirian.”"
+          },
+          {
+            "who": "The Crack of Soul",
+            "text": "“Tidak… kamu tidak lagi mempercayai kata-kataku...”"
+          },
+          {
+            "who": null,
+            "text": "The Crack of Soul retak dan menghilang."
+          },
+          {
+            "who": null,
+            "text": "{NAMA} akhirnya menyadari bahwa dirinya tidak ditentukan oleh perkataan orang lain. Ia mungkin memiliki kekurangan dan pernah terluka, tetapi ia tetap memiliki nilai dan berhak mendapatkan dukungan."
+          }
+        ],
+        "opsi": []
       }
     ]
   }
