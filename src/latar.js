@@ -161,11 +161,7 @@ const LATAR = {
 };
 
 const KATA_LATAR = [
-  [/\b(pergi ke perpustakaan untuk mengerjakan tugas kelompok)\b/i, 'cg_l3_perpus'],
-  [/\b(sekelompok siswa yang sebelumnya (sering )?mengejek)\b/i, 'cg_l1_perpus_awal'],
-  [/\b(menunduk memegang pulpen dan bukunya|menunduk memegang pulpen dan buku catatan)\b/i, 'cg_l1_perpus_menunduk'],
-  [/\b(berhenti menulis\. Tangan yang memegang pulpen menegang)\b/i, 'cg_l1_perpus'],
-  [/\b(Suasana perpustakaan yang seharusnya tenang berubah menjadi tidak nyaman)\b/i, 'cg_l1_perpus_sedih'],
+  [/\b(pergi ke perpustakaan untuk mengerjakan tugas kelompok|sekelompok siswa yang sebelumnya (sering )?mengejek|duduk membelakangi mereka di meja baca|Duduk di situ terus|berhenti menulis\. Tangan yang memegang pulpen menegang|Suasana perpustakaan yang seharusnya tenang berubah menjadi tidak nyaman)\b/i, 'cg_l3_perpus'],
   [/\b(Meskipun ejekan masih terdengar( beberapa saat)?)\b/i, 'cg_l1_perpus_diam'],
   [/\b(Suara mereka semakin keras hingga mengganggu pengunjung perpustakaan lainnya)\b/i, 'cg_l1_perpus_marah'],
   [/\b(pertengkaran membuat suasana perpustakaan)\b/i, 'cg_l1_perpus_marah'],
@@ -177,8 +173,8 @@ const KATA_LATAR = [
   [/\b(membalas semua perkataan teman-temannya|membalas perkataan mereka\. Suasana kantin menjadi ramai)\b/i, 'cg_l2_marah'],
   [/\b(mengangkat makanannya lalu( berjalan)? meninggalkan kantin|meninggalkan kantin\. Ia mencari tempat yang lebih tenang|menemukan bangku kosong di taman|berhasil menjauh dari situasi)\b/i, 'cg_l2_pergi'],
   [/\b((menghampiri|mendekati) guru piket yang (sedang )?berada di sekitar kantin)\b/i, 'cg_l2_lapor'],
-  [/\b(memilih diam saja sambil menundukkan kepalanya)\b/i, 'cg_l1_diam'],
-  [/\b(membalas mengejek penampilan mereka|balik mengejek penampilan mereka)\b/i, 'cg_l1_marah'],
+  [/\b(memilih diam saja sambil menundukkan kepalanya|menundukkan kepala sambil menggenggam ujung bajunya)\b/i, 'cg_l1_diam'],
+  [/\b(membalas mengejek penampilan mereka|balik mengejek penampilan mereka|tidak mampu lagi menahan emosinya)\b/i, 'cg_l1_marah'],
   [/\b(meninggalkan kelas dan pergi ke tempat lain)\b/i, 'cg_l1_pergi'],
   [/\b(menghampiri guru untuk menceritakan|ingin bicara sebentar|mendekati guru piket|menghampiri guru piket)\b/i, 'cg_l1_lapor'],
   [/\b(Guru memanggil siswa yang mengejek)\b/i, 'cg_l1_lapor2'],
