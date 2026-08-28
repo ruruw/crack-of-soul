@@ -1955,8 +1955,11 @@ function ubahStat(delta){
   ['b1','b2','b3'].forEach(b=>{ const p=$(b).parentElement.parentElement;
     p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); });
   Audio2.play(delta > 0 ? 'naik' : 'turun');
-  if(delta < 0){ const t=$('cast') && $('cast').querySelector('.slot-l, .slot-c');
-    if(t){ t.classList.remove('kaget'); void t.offsetWidth; t.classList.add('kaget'); } }
+  if(delta < 0){
+    const t=$('cast') && $('cast').querySelector('.slot-l, .slot-c');
+    if(t){ t.classList.remove('kaget'); void t.offsetWidth; t.classList.add('kaget'); }
+    if (navigator.vibrate) { try { navigator.vibrate([100, 50, 150]); } catch(e) {} }
+  }
   toast((delta>0?'+':'') + delta + ' Hope · Courage · Mental');
   return ['hope','courage','mental'].some(k => S[k] < AMBANG);
 }
@@ -2141,10 +2144,14 @@ function jawabBoss(o){
   if(benar){
     Audio2.play('bossKena');
     $('app').classList.remove('kena'); void $('app').offsetWidth; $('app').classList.add('kena');
+    if (navigator.vibrate) { try { navigator.vibrate(60); } catch(e) {} }
     setBossHP(bossState.hp - 20);
     toast('Boss melemah');
   } else {
-    const jatuh = ubahStat(-10);
+    Audio2.play('bossSerang');
+    $('app').classList.remove('kena'); void $('app').offsetWidth; $('app').classList.add('kena');
+    if (navigator.vibrate) { try { navigator.vibrate([150, 70, 220]); } catch(e) {} }
+    const jatuh = ubahStat(-15);
     if(jatuh){ setTimeout(()=>gameOver(), 700); return; }
   }
   bossState.i++;

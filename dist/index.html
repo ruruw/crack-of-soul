@@ -5729,16 +5729,37 @@ const Audio2 = (() => {
     turun:       () => { const t = ctx.currentTime; [523, 415, 330].forEach((f, i) =>
                          tone(f, t + i * 0.07, 0.20, 'sine', 0.20)); },
     pindah:      () => { const t = ctx.currentTime; noise(t, 0.28, 900, 0.7, 0.13, 'lowpass'); },
-    bossMuncul:  () => { const t = ctx.currentTime;
-                         tone(110, t, 1.6, 'sawtooth', 0.28, null, 55);
-                         noise(t, 1.4, 300, 0.5, 0.18, 'lowpass');
-                         tone(55, t + 0.1, 1.8, 'sine', 0.30); },
-    bossKena:    () => { const t = ctx.currentTime;
-                         noise(t, 0.22, 2200, 2, 0.26, 'bandpass');
-                         tone(320, t, 0.18, 'square', 0.16, null, 90); },
-    bossKalah:   () => { const t = ctx.currentTime;
-                         noise(t, 1.2, 1400, 0.8, 0.22, 'lowpass');
-                         [220, 165, 110].forEach((f, i) => tone(f, t + i * 0.14, 0.9, 'sine', 0.20)); },
+    bossMuncul:  () => {
+      const t = ctx.currentTime;
+      tone(120, t, 1.8, 'sawtooth', 0.35, null, 35);
+      noise(t, 1.6, 200, 0.4, 0.30, 'lowpass');
+      tone(48, t + 0.1, 2.0, 'sine', 0.42);
+      for (let i = 0; i < 6; i++) {
+        noise(t + 0.15 + i * 0.12, 0.08, 1400 + i * 250, 6, 0.14, 'bandpass');
+      }
+    },
+    bossSerang:  () => {
+      const t = ctx.currentTime;
+      tone(180, t, 0.45, 'sawtooth', 0.45, null, 30);
+      tone(48, t + 0.04, 0.55, 'sine', 0.55);
+      noise(t, 0.35, 180, 0.5, 0.45, 'lowpass');
+      noise(t, 0.22, 3200, 3, 0.28, 'bandpass');
+      for (let i = 0; i < 4; i++) {
+        tone(320 - i * 60, t + i * 0.035, 0.10, 'square', 0.20, null, 50);
+      }
+    },
+    bossKena:    () => {
+      const t = ctx.currentTime;
+      noise(t, 0.28, 2800, 2, 0.32, 'bandpass');
+      tone(440, t, 0.20, 'square', 0.24, null, 110);
+      tone(880, t + 0.02, 0.14, 'triangle', 0.20, null, 220);
+      noise(t + 0.05, 0.2, 800, 1.0, 0.22, 'lowpass');
+    },
+    bossKalah:   () => {
+      const t = ctx.currentTime;
+      noise(t, 2.0, 1000, 0.6, 0.35, 'lowpass');
+      [220, 165, 110, 55].forEach((f, i) => tone(f, t + i * 0.2, 1.4, 'sine', 0.28, null, f * 0.6));
+    },
     levelSelesai:() => { const t = ctx.currentTime; [523, 659, 784, 1047].forEach((f, i) =>
                          tone(f, t + i * 0.10, 0.42, 'triangle', 0.22)); },
     pencapaian:  () => { const t = ctx.currentTime; [784, 988, 1319].forEach((f, i) =>
@@ -5793,7 +5814,7 @@ const Audio2 = (() => {
     sendu:   { akar: 220, skala: 'minor', tempo: 1.10, pad: .15, arp: .045, bass: .09, drum: 0,   glitch: 0,   arpPola: [0, 3, 2, 0] },
     level2:  { akar: 196, skala: 'minor', tempo: 0.62, pad: .12, arp: .040, bass: .13, drum: .16, glitch: 0,   arpPola: [0, 2, 4, 3] },
     level3:  { akar: 175, skala: 'minor', tempo: 0.52, pad: .10, arp: .055, bass: .12, drum: .12, glitch: .09, arpPola: [0, 5, 3, 6] },
-    boss:    { akar: 147, skala: 'minor', tempo: 0.38, pad: .09, arp: .060, bass: .18, drum: .20, glitch: .05, arpPola: [0, 1, 0, 4] },
+    boss:    { akar: 110, skala: 'minor', tempo: 0.28, pad: .16, arp: .090, bass: .26, drum: .28, glitch: .09, arpPola: [0, 1, 3, 1, 6, 1, 3, 0] },
     ending:  { akar: 262, skala: 'mayor', tempo: 1.45, pad: .17, arp: .070, bass: .07, drum: 0,   glitch: 0,   arpPola: [0, 4, 6, 4] }
   };
 
@@ -5812,34 +5833,49 @@ const Audio2 = (() => {
       const akar = (step / 8) % 2 === 0 ? 0 : 3;
       [0, 2, 4].forEach((iv, i) => {
         const o = ctx.createOscillator();
-        o.type = i === 0 ? 'triangle' : 'sine';
+        o.type = (cfg === MUSIK.boss && i === 0) ? 'sawtooth' : (i === 0 ? 'triangle' : 'sine');
         o.frequency.value = nada(cfg, akar + iv, -1) * (1 + (i - 1) * 0.002);
-        const f = ctx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 900; f.Q.value = .6;
+        const f = ctx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = cfg === MUSIK.boss ? 650 : 900; f.Q.value = .7;
         o.connect(f);
-        env(f, t, 1.1, cfg.tempo * 7.5, cfg.pad, musicGain);
+        env(f, t, cfg === MUSIK.boss ? 0.4 : 1.1, cfg.tempo * 7.5, cfg.pad, musicGain);
         o.start(t); o.stop(t + cfg.tempo * 9);
       });
     }
     if (bar % 4 === 0 && cfg.bass) {                        /* bass */
-      const b = ctx.createOscillator(); b.type = 'sine';
+      const b = ctx.createOscillator(); b.type = cfg === MUSIK.boss ? 'sawtooth' : 'sine';
       b.frequency.value = nada(cfg, (step / 4) % 2 === 0 ? 0 : 3, -2);
-      env(b, t, 0.04, cfg.tempo * 3, cfg.bass, musicGain);
+      const fb = ctx.createBiquadFilter(); fb.type = 'lowpass'; fb.frequency.value = 280; fb.Q.value = 1.2;
+      b.connect(fb);
+      env(fb, t, 0.02, cfg.tempo * 2.8, cfg.bass, musicGain);
       b.start(t); b.stop(t + cfg.tempo * 3.5);
+
+      /* sub-drone saat boss */
+      if (cfg === MUSIK.boss) {
+        const sub = ctx.createOscillator(); sub.type = 'sine';
+        sub.frequency.setValueAtTime(45, t);
+        env(sub, t, 0.01, cfg.tempo * 3.8, cfg.bass * 1.3, musicGain);
+        sub.start(t); sub.stop(t + cfg.tempo * 4);
+      }
     }
     if (cfg.arp) {                                          /* arpeggio */
       const d = cfg.arpPola[bar % cfg.arpPola.length];
-      const o = ctx.createOscillator(); o.type = 'triangle';
+      const o = ctx.createOscillator(); o.type = cfg === MUSIK.boss ? 'sawtooth' : 'triangle';
       o.frequency.value = nada(cfg, d, bar % 8 < 4 ? 0 : 1);
-      env(o, t, 0.01, cfg.tempo * 0.9, cfg.arp, musicGain);
+      const fa = ctx.createBiquadFilter(); fa.type = 'bandpass'; fa.frequency.value = 1200; fa.Q.value = 2;
+      o.connect(fa);
+      env(fa, t, 0.01, cfg.tempo * 0.9, cfg.arp, musicGain);
       o.start(t); o.stop(t + cfg.tempo);
     }
     if (cfg.drum) {                                         /* ketukan */
       if (bar % 4 === 0) { const k = ctx.createOscillator(); k.type = 'sine';
-        k.frequency.setValueAtTime(120, t); k.frequency.exponentialRampToValueAtTime(45, t + .12);
-        env(k, t, 0.005, 0.14, cfg.drum, musicGain); k.start(t); k.stop(t + .2); }
-      if (bar % 8 === 4) noise(t, 0.09, 2400, 1.2, cfg.drum * .5, 'bandpass', musicGain);
+        k.frequency.setValueAtTime(140, t); k.frequency.exponentialRampToValueAtTime(35, t + .16);
+        env(k, t, 0.003, 0.18, cfg.drum * 1.3, musicGain); k.start(t); k.stop(t + .25); }
+      if (bar % 8 === 4) noise(t, 0.12, 1800, 1.4, cfg.drum * .8, 'bandpass', musicGain);
+      if (cfg === MUSIK.boss && (bar % 2 === 1)) {
+        noise(t, 0.03, 5000, 4, cfg.drum * 0.25, 'highpass', musicGain);
+      }
     }
-    if (cfg.glitch && Math.random() < 0.22) {               /* gangguan digital */
+    if (cfg.glitch && Math.random() < 0.35) {               /* gangguan digital */
       for (let i = 0; i < 3; i++)
         noise(t + i * 0.03, 0.025, 900 + Math.random() * 4000, 10, cfg.glitch, 'bandpass', musicGain);
     }
@@ -6068,8 +6104,11 @@ function ubahStat(delta){
   ['b1','b2','b3'].forEach(b=>{ const p=$(b).parentElement.parentElement;
     p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); });
   Audio2.play(delta > 0 ? 'naik' : 'turun');
-  if(delta < 0){ const t=$('cast') && $('cast').querySelector('.slot-l, .slot-c');
-    if(t){ t.classList.remove('kaget'); void t.offsetWidth; t.classList.add('kaget'); } }
+  if(delta < 0){
+    const t=$('cast') && $('cast').querySelector('.slot-l, .slot-c');
+    if(t){ t.classList.remove('kaget'); void t.offsetWidth; t.classList.add('kaget'); }
+    if (navigator.vibrate) { try { navigator.vibrate([100, 50, 150]); } catch(e) {} }
+  }
   toast((delta>0?'+':'') + delta + ' Hope · Courage · Mental');
   return ['hope','courage','mental'].some(k => S[k] < AMBANG);
 }
@@ -6254,10 +6293,14 @@ function jawabBoss(o){
   if(benar){
     Audio2.play('bossKena');
     $('app').classList.remove('kena'); void $('app').offsetWidth; $('app').classList.add('kena');
+    if (navigator.vibrate) { try { navigator.vibrate(60); } catch(e) {} }
     setBossHP(bossState.hp - 20);
     toast('Boss melemah');
   } else {
-    const jatuh = ubahStat(-10);
+    Audio2.play('bossSerang');
+    $('app').classList.remove('kena'); void $('app').offsetWidth; $('app').classList.add('kena');
+    if (navigator.vibrate) { try { navigator.vibrate([150, 70, 220]); } catch(e) {} }
+    const jatuh = ubahStat(-15);
     if(jatuh){ setTimeout(()=>gameOver(), 700); return; }
   }
   bossState.i++;
