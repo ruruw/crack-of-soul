@@ -980,6 +980,13 @@
   .ach-card.locked { opacity: 0.5; filter: grayscale(1); }
 
 </style>
+
+<link rel="manifest" href="/manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+</script>
 </head>
 <body>
 <div id="app">
@@ -1710,11 +1717,11 @@
 </div>
 
 <div class="scr" id="sPause">
-  <div class="sub">Jeda</div>
-  <h1 style="font-size:clamp(20px,5vw,26px)">Permainan Dijeda</h1>
+  <div class="sub" id="pSub" style="cursor: pointer; user-select: none;">Jeda</div>
+  <h1 id="pJudul" style="font-size:clamp(20px,5vw,26px); cursor: pointer; user-select: none;">Permainan Dijeda</h1>
   
-  <!-- DEVELOPER LEVEL SELECTOR -->
-  <div style="margin: 15px 0; padding: 10px; border: 1px dashed #e74c3c; border-radius: 6px; background: rgba(231, 76, 60, 0.15); width: 85%; text-align: center; box-sizing: border-box;">
+  <!-- DEVELOPER LEVEL SELECTOR (Hidden by default, toggle with Ctrl+Shift+D or tap title 5x) -->
+  <div id="devLevelSelector" style="display: none; margin: 15px 0; padding: 10px; border: 1px dashed #e74c3c; border-radius: 6px; background: rgba(231, 76, 60, 0.15); width: 85%; text-align: center; box-sizing: border-box;">
     <div style="font-size: 13px; color: #e74c3c; font-weight: bold; margin-bottom: 7px; letter-spacing: 1px;">🔧 DEVELOPER LEVEL SELECTOR</div>
     <select id="cheatLompat" style="padding: 10px 16px; border-radius: 4px; border: 1px solid #e74c3c; background: #150d1b; color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%; box-sizing: border-box; outline: none; text-align: center;">
       <option value="">-- Pilih Adegan --</option>
@@ -6833,8 +6840,47 @@ if (screen.orientation && screen.orientation.lock) {
   screen.orientation.lock('portrait').catch(e => console.log('Orientation lock unsupported or denied'));
 }
 
-// Populate developer level selector
+// Developer level selector toggle & shortcuts
 const cheatSel = $('cheatLompat');
+const devBox = $('devLevelSelector');
+
+function toggleDevSelector() {
+  if (!devBox) return;
+  const isHidden = (devBox.style.display === 'none' || !devBox.style.display);
+  devBox.style.display = isHidden ? 'block' : 'none';
+  if (isHidden && (!$('sPause') || !$('sPause').classList.contains('on'))) {
+    buka('sPause');
+  }
+  toast(isHidden ? '🔧 Developer Mode: Aktif' : '🔧 Developer Mode: Nonaktif');
+}
+
+// Secret Tap (5x tap on "Permainan Dijeda" / "Jeda" within 2 seconds)
+let devTapCount = 0;
+let devTapTimer = null;
+const handleDevSecretTap = () => {
+  devTapCount++;
+  clearTimeout(devTapTimer);
+  devTapTimer = setTimeout(() => { devTapCount = 0; }, 2000);
+  if (devTapCount >= 5) {
+    devTapCount = 0;
+    toggleDevSelector();
+  }
+};
+if ($('pJudul')) $('pJudul').addEventListener('click', handleDevSecretTap);
+if ($('pSub')) $('pSub').addEventListener('click', handleDevSecretTap);
+
+// Keyboard shortcuts (Ctrl+Shift+D / Cmd+Shift+D or ` ~)
+window.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'D' || e.key === 'd')) {
+    e.preventDefault();
+    toggleDevSelector();
+  } else if (e.key === '`' || e.key === '~') {
+    if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) return;
+    e.preventDefault();
+    toggleDevSelector();
+  }
+});
+
 if (cheatSel) {
   URUTAN.forEach(id => {
     const opt = document.createElement('option');
@@ -6862,7 +6908,7 @@ if (cheatSel) {
 window.addEventListener('contextmenu', e => e.preventDefault());
 S = baru(); updateStat();
 window.__COS__ = { get S(){return S}, set S(v){S=v}, NASKAH, URUTAN, mulaiLangkah, buka, tampilPeta,
-                   get adegan(){return adegan}, get boss(){return bossState} };
+                   get adegan(){return adegan}, get boss(){return bossState}, toggleDev: toggleDevSelector };
 </script>
 </body>
 </html>
