@@ -19,14 +19,15 @@
     --panel:rgba(20,15,22,.88); --line:rgba(255,255,255,.11);
     --safe-t:env(safe-area-inset-top,0px); --safe-b:env(safe-area-inset-bottom,0px);
   }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;height:100%;overflow:hidden}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;}
+  img{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none;pointer-events:none;}
+  html,body{margin:0;height:100%;overflow:hidden;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;}
   body{background:var(--bg);color:var(--ink);user-select:none;overscroll-behavior:none;
     font-family:'Manrope','Segoe UI',system-ui,-apple-system,'Noto Sans',sans-serif}
   #app{position:relative;width:100%;max-width:480px;height:100%;margin:0 auto;display:flex;flex-direction:column;box-shadow:0 0 50px rgba(0,0,0,1);overflow:hidden;background:#000;}
 
   /* ---- latar ---- */
-  #bg{position:absolute;inset:0;transition:background 1.2s ease}
+  #bg{position:absolute;inset:0;transition:background 1.2s ease;pointer-events:none;}
   /* lapisan depan + bayangan lantai */
   #depan{display:none;position:absolute;left:0;right:0;bottom:0;z-index:5;pointer-events:none;overflow:hidden;
     filter:drop-shadow(0 -8px 18px rgba(0,0,0,.55))}
@@ -2305,6 +2306,7 @@ if (cheatSel) {
   };
 }
 
+window.addEventListener('contextmenu', e => e.preventDefault());
 S = baru(); updateStat();
 window.__COS__ = { get S(){return S}, set S(v){S=v}, NASKAH, URUTAN, mulaiLangkah, buka, tampilPeta,
                    get adegan(){return adegan}, get boss(){return bossState} };

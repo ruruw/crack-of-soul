@@ -1695,11 +1695,11 @@ const NASKAH = [
           },
           {
             "who": "Cowo 1",
-            "text": "Ya ampun, Yan...Kamu lagi main petak umpet apa lagi cosplay jadi orang-orangan sawah?"
+            "text": "Ya ampun, {NAMA}...Kamu lagi main petak umpet apa lagi cosplay jadi orang-orangan sawah?"
           },
           {
             "who": "Cewe",
-            "text": "Yan, kamu sadar nggak sih? Kamu ngumpet di situ bukannya ketutup, malah bikin tiangnya kelihatan makin kokoh dibanding badan kamu yang tinggal tulang gitu!"
+            "text": "{NAMA}, kamu sadar nggak sih? Kamu ngumpet di situ bukannya ketutup, malah bikin tiangnya kelihatan makin kokoh dibanding badan kamu yang tinggal tulang gitu!"
           },
           {
             "who": "{NAMA}",
@@ -1707,7 +1707,7 @@ const NASKAH = [
           },
           {
             "who": "Cowo 2",
-            "text": "Lagian jidat kamu yang penuh jerawat merah-merah itu mantul cahaya, Yan. Dari jarak sepuluh meter juga udah kayak lampu sein menyala!"
+            "text": "Lagian jidat kamu yang penuh jerawat merah-merah itu mantul cahaya, {NAMA}. Dari jarak sepuluh meter juga udah kayak lampu sein menyala!"
           },
           {
             "who": "Cewe",
