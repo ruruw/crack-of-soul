@@ -289,6 +289,61 @@
   .edu-list.heart li::before { content: "💜"; color: #c084fc; font-size: 10px; padding-top: 2px; }
   .btn-lanjut { background: linear-gradient(135deg, #7e22ce, #9333ea); border: none; color: white; box-shadow: 0 4px 14px rgba(147,51,234,0.4); text-transform: uppercase; letter-spacing: 1px; width: 100%; margin-top: 0; }
 
+  /* ---- true ending screen ---- */
+  #sEnd { padding: 14px; align-items: stretch; justify-content: flex-start; overflow-y: auto; }
+  .end-wrap { display: flex; flex-direction: column; gap: 14px; text-align: left; max-width: 450px; margin: 0 auto; width: 100%; padding-bottom: 24px; }
+  
+  .end-header { display: flex; align-items: center; gap: 12px; background: rgba(26, 18, 38, 0.85); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 14px; padding: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  .end-heart-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 70px; height: 70px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.35), rgba(88,28,135,0.6)); border: 2px solid #c084fc; flex-shrink: 0; box-shadow: 0 0 16px rgba(192,132,252,0.4); text-align: center; }
+  .end-heart-badge .heart-icon { font-size: 24px; line-height: 1; }
+  .end-heart-badge .badge-text { font-size: 8px; font-weight: 800; letter-spacing: 0.1em; color: #f3e8ff; margin-top: 2px; }
+  
+  .end-header-text { flex: 1; }
+  .end-title { font-size: 22px; font-family: 'Spectral', Georgia, serif; font-style: italic; font-weight: 700; background: linear-gradient(135deg, #f3e8ff, #c084fc, #e9d5ff); -webkit-background-clip: text; color: transparent; margin: 0 0 4px 0; }
+  .end-subtitle { font-size: 12px; color: #d1d5db; line-height: 1.4; }
+  .end-subtitle span { color: #e9d5ff; font-weight: 700; }
+  .end-narrative { font-size: 11.5px; color: #9ca3af; line-height: 1.45; margin: 6px 0 0 0; }
+  
+  .end-card { background: rgba(22, 16, 32, 0.88); border: 1px solid rgba(168, 85, 247, 0.28); border-radius: 14px; padding: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+  .end-card.closing-msg { text-align: center; background: radial-gradient(circle at 50% 0%, rgba(88,28,135,0.35), rgba(22,16,32,0.9)); border-color: rgba(192,132,252,0.4); }
+  .end-card-header { font-size: 11px; font-weight: 800; letter-spacing: 0.15em; color: #c084fc; margin-bottom: 8px; text-transform: uppercase; text-align: center; }
+  .end-card.closing-msg .quote { font-size: 13px; font-style: italic; color: #f3e8ff; line-height: 1.6; margin: 0 0 8px 0; }
+  .heart-divider { font-size: 14px; color: #a855f7; margin: 4px 0; }
+  .end-card.closing-msg .sub-quote { font-size: 11.5px; color: #d1d5db; line-height: 1.5; margin: 0; }
+  .hero-text { color: #facc15; font-size: 13px; letter-spacing: 0.1em; display: inline-block; margin-top: 4px; }
+  
+  .end-section-title { font-size: 11.5px; font-weight: 800; letter-spacing: 0.15em; color: #e9d5ff; text-align: center; margin: 6px 0 2px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .end-section-title span { color: #a855f7; }
+  
+  .lesson-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .lesson-card { background: rgba(22, 16, 32, 0.85); border: 1px solid rgba(168, 85, 247, 0.22); border-radius: 12px; padding: 10px; position: relative; display: flex; flex-direction: column; gap: 6px; }
+  .lesson-card:hover { border-color: rgba(192,132,252,0.5); }
+  .lesson-num { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #7e22ce, #a855f7); color: #fff; font-size: 10px; font-weight: 800; display: grid; place-items: center; box-shadow: 0 2px 6px rgba(168,85,247,0.4); }
+  .lesson-head { display: flex; align-items: center; gap: 6px; }
+  .lesson-icon { font-size: 16px; flex-shrink: 0; }
+  .lesson-title { font-size: 11px; font-weight: 700; color: #f3e8ff; line-height: 1.3; }
+  .lesson-desc { font-size: 10px; color: #9ca3af; line-height: 1.45; margin: 0; }
+  
+  .light-banner { background: linear-gradient(135deg, rgba(88,28,135,0.4), rgba(20,15,30,0.85)); border: 1px dashed rgba(192,132,252,0.45); border-radius: 12px; padding: 12px; text-align: center; }
+  .banner-title { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #fde047; margin-bottom: 4px; }
+  .banner-sub { font-size: 10.5px; color: #d1d5db; line-height: 1.45; }
+  
+  .end-stat-row { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #e5e7eb; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .end-stat-row:last-child { border-bottom: none; }
+  .end-stat-row b { color: #facc15; font-size: 13px; }
+  
+  .paper-note { background: #f4ead6; color: #3a2818; border-radius: 6px; padding: 12px 14px; position: relative; box-shadow: 0 6px 16px rgba(0,0,0,0.5); transform: rotate(-1deg); margin: 4px 6px; }
+  .paper-note .pin-clip { position: absolute; top: -8px; right: 14px; font-size: 18px; }
+  .paper-note .paper-title { font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: #6b3f18; margin-bottom: 6px; }
+  .paper-note .paper-body { font-size: 11.5px; line-height: 1.5; margin: 0; font-family: 'Spectral', Georgia, serif; }
+  
+  .end-btn-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .end-btn { width: 100%; padding: 12px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: #fff; }
+  .end-btn.primary { background: linear-gradient(135deg, #7e22ce, #9333ea); border: none; box-shadow: 0 4px 14px rgba(147,51,234,0.4); }
+  .end-btn.ghost { background: transparent; border-color: rgba(255,255,255,0.1); color: var(--muted); }
+  .end-btn:active { transform: scale(0.98); }
+  .end-footer-tag { font-size: 10.5px; color: #9ca3af; text-align: center; margin-top: 2px; }
+
   /* ---- boss ---- */
   #bosshud{position:relative;z-index:6;padding:2px 13px 6px;display:none}
   #bosshud.on{display:block}
@@ -1024,6 +1079,10 @@
           <i>❓</i>
           <div class="d-btn-tx"><h4>BANTUAN</h4><p>Cara bermain & informasi</p></div>
         </button>
+        <button class="d-btn" id="mTentang">
+          <i>ℹ️</i>
+          <div class="d-btn-tx"><h4>TENTANG</h4><p>Tim pengembang & terima kasih</p></div>
+        </button>
       </div>
 
       <div class="d-note">
@@ -1070,16 +1129,43 @@
     </div>
     <div class="d-modal-body set-grid">
       <div class="set-tabs">
-        <button class="set-tab">Audio</button>
-        <button class="set-tab">Gameplay</button>
-        <button class="set-tab active">Bahasa</button>
+        <button class="set-tab" id="tabBtnAudio" onclick="pilihTabSet('audio')">🎵 Audio</button>
+        <button class="set-tab" id="tabBtnGame" onclick="pilihTabSet('game')">🎮 Gameplay</button>
+        <button class="set-tab active" id="tabBtnLang" onclick="pilihTabSet('lang')">🌐 Bahasa</button>
       </div>
-      <div class="set-content d-note" style="background:#e6dcc3; color:#2c2419; transform:none;">
-        <div style="font-weight:700; margin-bottom:12px">PILIH BAHASA / SELECT LANGUAGE</div>
+      
+      <!-- Audio Tab Content -->
+      <div class="set-content" id="tabContentAudio" style="display:none; background:rgba(20,15,30,0.85); color:#e5e7eb; border-radius:8px;">
+        <div style="font-weight:700; color:#c084fc; margin-bottom:12px; font-size:12.5px; letter-spacing:0.05em;">PENGATURAN SUARA</div>
+        <div class="setrow" style="margin:8px 0;">Musik <input type="range" id="volM2" min="0" max="100" value="55"><span id="lblM2">55</span></div>
+        <div class="setrow" style="margin:8px 0;">Efek Suara <input type="range" id="volE2" min="0" max="100" value="80"><span id="lblE2">80</span></div>
+        <button class="btn ghost" id="setBisu2" style="width:100%; margin-top:10px;">Bisukan Semua Suara</button>
+      </div>
+
+      <!-- Gameplay Tab Content -->
+      <div class="set-content" id="tabContentGame" style="display:none; background:rgba(20,15,30,0.85); color:#e5e7eb; border-radius:8px;">
+        <div style="font-weight:700; color:#c084fc; margin-bottom:12px; font-size:12.5px; letter-spacing:0.05em;">PENGATURAN PERMAINAN</div>
+        <div class="setrow" style="margin:8px 0;">Kecepatan Teks <input type="range" id="volT2" min="5" max="60" value="22"><span id="lblT2">22</span></div>
+        <button class="btn ghost" id="setKomik2" style="width:100%; margin-top:10px;">Tampilan Dialog: Kotak Bawah</button>
+        <button class="btn ghost" id="setReset" style="width:100%; margin-top:10px; color:#f87171; border-color:rgba(239,68,68,0.3);">Reset Data Permainan</button>
+      </div>
+
+      <!-- Bahasa Tab Content -->
+      <div class="set-content d-note" id="tabContentLang" style="background:#f4ead6; color:#2c2419; transform:none; border-radius:8px;">
+        <div style="font-weight:700; margin-bottom:12px; font-size:12px; letter-spacing:0.05em;">PILIH BAHASA / SELECT LANGUAGE</div>
         <div class="lang-grid">
-          <button class="lang-btn active" style="color:#222; border-color:#8b6bd9">🇮🇩 Bahasa Indonesia</button>
-          <button class="lang-btn" style="color:#222; border-color:#ccc">🇬🇧 English</button>
+          <button class="lang-btn active" id="btnLangId" style="color:#222; border-color:#8b6bd9; background:rgba(139,107,217,0.18);">
+            <span style="font-size:22px">🇮🇩</span>
+            <span style="font-weight:700; font-size:12px">Bahasa Indonesia</span>
+            <span style="font-size:10px; color:#16a34a; font-weight:700">✓ Aktif</span>
+          </button>
+          <button class="lang-btn" id="btnLangEn" style="color:#666; border-color:#ccc; background:rgba(0,0,0,0.03);">
+            <span style="font-size:22px">🇬🇧</span>
+            <span style="font-weight:700; font-size:12px">English</span>
+            <span style="font-size:10px; color:#9ca3af">Segera Hadir</span>
+          </button>
         </div>
+        <div id="langNotice" style="font-size:11px; margin-top:12px; color:#78350f; line-height:1.45; text-align:center; font-style:italic">Bahasa Indonesia saat ini aktif secara default.</div>
       </div>
     </div>
   </div>
@@ -1108,6 +1194,50 @@
   </div>
 </div>
 
+<div class="d-modal" id="modTentang">
+  <div class="d-modal-box" style="max-width:440px;">
+    <div class="d-modal-header">
+      <span>HALAMAN TENTANG</span>
+      <button class="d-modal-close" onclick="$('modTentang').classList.remove('on')">&times;</button>
+    </div>
+    <div class="d-modal-body" style="color:#e5e7eb; font-size:12.5px; line-height:1.6; display:flex; flex-direction:column; gap:12px;">
+      
+      <!-- Brand & Version -->
+      <div style="text-align:center; padding:12px 8px; background:rgba(124,95,214,0.15); border:1px solid rgba(168,85,247,0.3); border-radius:12px;">
+        <h3 style="margin:0 0 2px 0; font-family:'Spectral',Georgia,serif; font-size:20px; font-weight:800; background:linear-gradient(135deg,#f3e8ff,#c084fc); -webkit-background-clip:text; color:transparent; letter-spacing:0.05em;">THE CRACK OF SOUL</h3>
+        <div style="font-size:12px; font-weight:700; color:#facc15; letter-spacing:0.1em; text-transform:uppercase;">Game Edukasi Anti-Perundungan</div>
+        <div style="font-size:11px; color:#9ca3af; margin-top:4px;">Versi 1.0</div>
+      </div>
+
+      <!-- Tim Pengembang -->
+      <div class="edu-box" style="padding:12px;">
+        <div class="edu-box-header" style="color:#c084fc; font-size:12px; margin-bottom:6px;"><span class="i">👥</span> TIM PENGEMBANG</div>
+        <p style="font-size:12px; color:#d1d5db; line-height:1.5; margin:0 0 6px 0;">
+          • <b>Meru</b> (<a href="https://merurw.com" target="_blank" rel="noopener noreferrer" style="color:#c084fc; text-decoration:underline;">merurw.com</a>) — Desain Game & Pemrograman<br>
+          • <b>Tim Edukasi & Skenario</b> — Penyusunan Naskah & Konten Interaktif
+        </p>
+      </div>
+
+      <!-- Website Resmi -->
+      <div style="text-align:center; margin:2px 0;">
+        <a href="https://merurw.com" target="_blank" rel="noopener noreferrer" style="color:#e9d5ff; text-decoration:none; font-weight:700; font-size:12px; display:inline-flex; align-items:center; gap:6px; background:rgba(168,85,247,0.18); padding:8px 16px; border-radius:20px; border:1px solid rgba(168,85,247,0.35);">
+          <span>🌐</span> Kunjungi Website: merurw.com <span>↗</span>
+        </a>
+      </div>
+
+      <!-- Ucapan Terima Kasih -->
+      <div class="edu-box" style="padding:12px;">
+        <div class="edu-box-header" style="color:#c084fc; font-size:12px; margin-bottom:6px;"><span class="i">🙏</span> UCAPAN TERIMA KASIH</div>
+        <p style="font-size:12px; color:#d1d5db; line-height:1.5; margin:0;">
+          Terima kasih sebesar-besarnya kepada seluruh guru bimbingan konseling, konselor, pendidik, dan komunitas yang berjuang menghentikan perundungan di sekolah.<br><br>
+          Serta terima kasih khusus kepada <b>kamu</b> yang telah bermain dan berani menjadi cahaya bagi orang lain!
+        </p>
+      </div>
+
+      <button class="btn" style="width:100%; margin-top:4px;" onclick="$('modTentang').classList.remove('on')">Kembali</button>
+    </div>
+  </div>
+</div>
 
 <div class="scr" id="sChar">
   <div class="sub">Pilih Karakter</div>
@@ -1380,14 +1510,143 @@
 </div>
 
 <div class="scr" id="sEnd">
-  <div class="sub">True Ending</div>
-  <h1 id="endTitle" style="font-size:clamp(22px,6vw,32px)">Kamu telah melewati semuanya.</h1>
-  <div class="crackline"></div>
-  <div id="endStat" style="color:#cfcadf;font-size:14px;margin:6px 0 4px"></div>
-  <div id="endBody" style="max-width:440px;color:#cfcadf;font-size:14px;line-height:1.75;text-align:left;
-    margin:12px 0;white-space:pre-line"></div>
-  <div class="note" id="endHelp"></div>
-  <button class="btn" id="endGo">Main Lagi</button>
+  <div class="end-wrap">
+    <!-- Header Section -->
+    <div class="end-header">
+      <div class="end-heart-badge">
+        <div class="heart-icon">💜</div>
+        <div class="badge-text">TRUE ENDING</div>
+      </div>
+      <div class="end-header-text">
+        <h1 class="end-title">Terima Kasih!</h1>
+        <div class="end-subtitle">Kamu telah menyelesaikan perjalanan panjang di <span>THE CRACK OF SOUL</span></div>
+        <p class="end-narrative">Setiap pilihan yang kamu ambil, setiap keberanian yang kamu tunjukkan, telah membantumu melewati luka, menemukan kekuatan, dan belajar menjadi pribadi yang lebih baik.</p>
+      </div>
+    </div>
+
+    <!-- Pesan Penutup Card -->
+    <div class="end-card closing-msg">
+      <div class="end-card-header">💜 PESAN PENUTUP 💜</div>
+      <p class="quote">“Bullying tidak pernah membuat seseorang menjadi lebih hebat. Justru empati, keberanian, dan kepedulianlah yang membuat kita menjadi manusia yang lebih baik.”</p>
+      <div class="heart-divider">♡</div>
+      <p class="sub-quote">Teruslah menyebarkan kebaikan, menjadi teman yang baik, dan ciptakan lingkungan yang aman bagi semua orang.<br><b class="hero-text">KAMU HEBAT!</b></p>
+    </div>
+
+    <!-- Pelajaran Yang Dapat Diambil (8 Cards) -->
+    <div class="end-section-title">
+      <span>✦</span> PELAJARAN YANG DAPAT DIAMBIL <span>✦</span>
+    </div>
+    <div class="lesson-grid">
+      <!-- 1 -->
+      <div class="lesson-card">
+        <div class="lesson-num">1</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">☹️</div>
+          <div class="lesson-title">Bullying bukanlah candaan.</div>
+        </div>
+        <p class="lesson-desc">Perkataan, tindakan, maupun komentar di media sosial dapat meninggalkan luka yang mendalam bagi seseorang.</p>
+      </div>
+      <!-- 2 -->
+      <div class="lesson-card">
+        <div class="lesson-num">2</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">💖</div>
+          <div class="lesson-title">Setiap orang berhak dihargai.</div>
+        </div>
+        <p class="lesson-desc">Perbedaan bukan alasan untuk merendahkan. Hargai setiap orang apa adanya.</p>
+      </div>
+      <!-- 3 -->
+      <div class="lesson-card">
+        <div class="lesson-num">3</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">📢</div>
+          <div class="lesson-title">Berani berbicara adalah bentuk keberanian.</div>
+        </div>
+        <p class="lesson-desc">Meminta bantuan bukan berarti lemah. Itu adalah langkah berani untuk melindungi diri.</p>
+      </div>
+      <!-- 4 -->
+      <div class="lesson-card">
+        <div class="lesson-num">4</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">🛡️</div>
+          <div class="lesson-title">Diam bukan solusi.</div>
+        </div>
+        <p class="lesson-desc">Jika melihat bullying terjadi, jangan diam. Bantu, dukung, atau laporkan kepada orang dewasa.</p>
+      </div>
+      <!-- 5 -->
+      <div class="lesson-card">
+        <div class="lesson-num">5</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">💬</div>
+          <div class="lesson-title">Kata-kata memiliki kekuatan.</div>
+        </div>
+        <p class="lesson-desc">Ucapan yang baik dapat menguatkan seseorang, sedangkan kata-kata yang menyakitkan dapat menghancurkan rasa percaya diri.</p>
+      </div>
+      <!-- 6 -->
+      <div class="lesson-card">
+        <div class="lesson-num">6</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">📱</div>
+          <div class="lesson-title">Bijak menggunakan media sosial.</div>
+        </div>
+        <p class="lesson-desc">Pikirkan dampak sebelum mengomentari atau membagikan sesuatu. Jadilah pengguna media sosial yang bertanggung jawab.</p>
+      </div>
+      <!-- 7 -->
+      <div class="lesson-card">
+        <div class="lesson-num">7</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">🤲</div>
+          <div class="lesson-title">Luka bisa pulih dengan dukungan.</div>
+        </div>
+        <p class="lesson-desc">Kamu tidak sendiri. Dukungan dari keluarga, teman, dan lingkungan sekitar membantu proses pemulihan.</p>
+      </div>
+      <!-- 8 -->
+      <div class="lesson-card">
+        <div class="lesson-num">8</div>
+        <div class="lesson-head">
+          <div class="lesson-icon">⭐</div>
+          <div class="lesson-title">Keberanian mengubah masa depan.</div>
+        </div>
+        <p class="lesson-desc">Tindakan kecil yang baik dapat menciptakan perubahan besar. Teruslah menjadi versi terbaik dirimu!</p>
+      </div>
+    </div>
+
+    <!-- Banner Quote -->
+    <div class="light-banner">
+      <div class="banner-title">JADILAH CAHAYA BAGI ORANG LAIN.</div>
+      <div class="banner-sub">Bersama, kita bisa menghentikan bullying.<br>Bersama, kita bisa menciptakan dunia yang lebih baik.</div>
+    </div>
+
+    <!-- Kenangan Perjalananmu (Stats Box) -->
+    <div class="end-card stats-card">
+      <div class="end-card-header">🌸 KENANGAN PERJALANANMU 🌸</div>
+      <div class="end-stat-row"><span>⭐ Pilihan Baik</span><b id="endPilihanBaik">52</b></div>
+      <div class="end-stat-row"><span>👥 Teman yang Kamu Bantu</span><b id="endTemanBantu">18</b></div>
+      <div class="end-stat-row"><span>🛡️ Keberanianmu</span><b id="endKeberanian">100%</b></div>
+      <div class="end-stat-row"><span>💖 Luka yang Kamu Sembuhkan</span><b>100%</b></div>
+    </div>
+
+    <!-- Sticky Paper Note -->
+    <div class="paper-note">
+      <div class="pin-clip">📎</div>
+      <div class="paper-title">INGAT!</div>
+      <p class="paper-body">
+        Kamu berharga.<br>
+        Kamu cukup.<br>
+        Kamu tidak sendiri.<br><br>
+        <em>Selalu ada harapan di setiap akhir yang kamu jalani. ♡</em>
+      </p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="end-btn-group">
+      <button class="btn end-btn" id="endReplay">↩️ MAIN LAGI</button>
+      <button class="btn end-btn primary" id="endHome">🏠 MENU UTAMA</button>
+      <button class="btn end-btn ghost" id="endExit">🚪 KELUAR</button>
+    </div>
+
+    <div class="end-footer-tag">Terima kasih telah menjadi bagian dari perubahan. ♡</div>
+  </div>
 </div>
 
 <div class="scr" id="sSet">
@@ -1401,15 +1660,37 @@
   <button class="btn" id="setGo">Kembali</button>
 </div>
 
-<div class="scr" id="sAbout">
-  <div class="sub">Tentang</div>
-  <h1 style="font-size:clamp(20px,5vw,26px)">The Crack of Soul</h1>
-  <div class="note" style="max-width:400px">
-    <b>Game Edukasi Anti-Perundungan</b><br>Versi 1.0<br><br>
-    Permainan ini dibuat untuk memperkenalkan bentuk-bentuk perundungan verbal, fisik, dan digital,
-    serta menunjukkan bahwa meminta bantuan adalah bentuk keberanian.
+<div class="scr" id="sAbout" style="padding:16px; align-items:center; overflow-y:auto;">
+  <div class="sub">Halaman Tentang</div>
+  <div style="text-align:center; padding:14px 10px; background:rgba(124,95,214,0.15); border:1px solid rgba(168,85,247,0.3); border-radius:14px; max-width:440px; width:100%; margin-bottom:12px;">
+    <h2 style="margin:0 0 4px 0; font-family:'Spectral',Georgia,serif; font-size:22px; font-weight:800; background:linear-gradient(135deg,#f3e8ff,#c084fc); -webkit-background-clip:text; color:transparent; letter-spacing:0.05em;">THE CRACK OF SOUL</h2>
+    <div style="font-size:12px; font-weight:700; color:#facc15; letter-spacing:0.1em; text-transform:uppercase;">Game Edukasi Anti-Perundungan</div>
+    <div style="font-size:11px; color:#9ca3af; margin-top:4px;">Versi 1.0</div>
   </div>
-  <button class="btn" id="aboutGo">Kembali</button>
+
+  <div class="edu-box" style="max-width:440px; width:100%; padding:14px; margin-bottom:10px;">
+    <div class="edu-box-header" style="color:#c084fc; font-size:12px; margin-bottom:6px;"><span class="i">👥</span> TIM PENGEMBANG</div>
+    <p style="font-size:12px; color:#d1d5db; line-height:1.5; margin:0 0 6px 0;">
+      • <b>Meru</b> (<a href="https://merurw.com" target="_blank" rel="noopener noreferrer" style="color:#c084fc; text-decoration:underline;">merurw.com</a>) — Desain Game & Pemrograman<br>
+      • <b>Tim Edukasi & Skenario</b> — Penyusunan Naskah & Konten Interaktif
+    </p>
+  </div>
+
+  <div style="text-align:center; margin:2px 0 10px 0; max-width:440px; width:100%;">
+    <a href="https://merurw.com" target="_blank" rel="noopener noreferrer" style="color:#e9d5ff; text-decoration:none; font-weight:700; font-size:12px; display:inline-flex; align-items:center; gap:6px; background:rgba(168,85,247,0.18); padding:8px 16px; border-radius:20px; border:1px solid rgba(168,85,247,0.35);">
+      <span>🌐</span> Kunjungi Website: merurw.com <span>↗</span>
+    </a>
+  </div>
+
+  <div class="edu-box" style="max-width:440px; width:100%; padding:14px; margin-bottom:14px;">
+    <div class="edu-box-header" style="color:#c084fc; font-size:12px; margin-bottom:6px;"><span class="i">🙏</span> UCAPAN TERIMA KASIH</div>
+    <p style="font-size:12px; color:#d1d5db; line-height:1.5; margin:0;">
+      Terima kasih sebesar-besarnya kepada seluruh guru bimbingan konseling, konselor, pendidik, dan komunitas yang berjuang menciptakan lingkungan aman dan suportif bagi semua orang.<br><br>
+      Serta terima kasih khusus kepada <b>kamu</b> yang telah bermain dan memilih untuk peduli!
+    </p>
+  </div>
+
+  <button class="btn" id="aboutGo" style="max-width:440px; width:100%;">Kembali</button>
 </div>
 
 <div class="scr" id="sPause">
@@ -1933,16 +2214,17 @@ function ulangiAdegan(){
 function tampilEnding(){
   Audio2.musik('ending'); Audio2.play('selesai');
   $('bg').className='bg-dawn';
-  const lapor = S.pilihan.filter(p=>p.aksi==='lapor').length;
-  const total = S.pilihan.length;
-  $('endStat').textContent = `Hope ${S.hope} · Courage ${S.courage} · Mental ${S.mental}` +
-    `   |   ${lapor} dari ${total} kali memilih meminta bantuan`;
-  $('endBody').textContent =
-    'Kamu telah berani menghadapi kata-kata yang menyakitkan, tindakan yang melukai, dan komentar yang '+
-    'menghancurkan. Namun kamu memilih untuk tetap bertahan.\n\n'+
-    'Ingat, luka bisa sembuh, dan kamu tidak pernah sendirian. Terima kasih sudah percaya pada dirimu sendiri.';
-  $('endHelp').innerHTML = '<b>Kalau kamu mengalami hal serupa</b><br>Bicaralah dengan guru bimbingan '+
-    'konseling di sekolahmu, atau orang dewasa yang kamu percaya. Bercerita bukan tanda lemah.';
+  const lapor = (S && S.pilihan) ? S.pilihan.filter(p=>p.aksi==='lapor').length : 0;
+  const diam = (S && S.pilihan) ? S.pilihan.filter(p=>p.aksi==='diam').length : 0;
+  const pergi = (S && S.pilihan) ? S.pilihan.filter(p=>p.aksi==='pergi').length : 0;
+  const pilihanBaik = (lapor + pergi + diam) * 4 + 16;
+  const temanBantu = lapor * 3 + pergi * 2 + 6;
+  const keberanian = Math.min(100, Math.max(50, Math.round(((S.courage || 80) / 100) * 100)));
+  
+  if ($('endPilihanBaik')) $('endPilihanBaik').textContent = pilihanBaik;
+  if ($('endTemanBantu')) $('endTemanBantu').textContent = temanBantu;
+  if ($('endKeberanian')) $('endKeberanian').textContent = `${keberanian}%`;
+  
   buka('sEnd');
 }
 
@@ -2003,6 +2285,7 @@ const TIPS = [
   if($('mAch')) if($('mAch')) $('mAch').onclick = () => { Audio2.play('klik'); $('modAch').classList.add('on'); };
   if($('mSet2')) if($('mSet2')) $('mSet2').onclick = () => { Audio2.play('klik'); $('modSet').classList.add('on'); };
   if($('mBantuan')) if($('mBantuan')) $('mBantuan').onclick = () => { Audio2.play('klik'); $('modBantuan').classList.add('on'); };
+  if($('mTentang')) $('mTentang').onclick = () => { Audio2.play('klik'); $('modTentang').classList.add('on'); };
   if($('mMulai2')) if($('mMulai2')) $('mMulai2').onclick = () => { 
     Audio2.play('klik'); 
     if(S && S.nama) {
@@ -2056,6 +2339,9 @@ if($('lvGo')) $('lvGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('eduGo')) $('eduGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('eduGo2')) $('eduGo2').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('overGo')) $('overGo').onclick = ()=>{ Audio2.play('klik'); ulangiAdegan(); };
+if($('endReplay')) $('endReplay').onclick = ()=>{ Audio2.play('klik'); location.reload(); };
+if($('endHome')) $('endHome').onclick = ()=>{ Audio2.play('klik'); location.reload(); };
+if($('endExit')) $('endExit').onclick = ()=>{ Audio2.play('klik'); location.reload(); };
 if($('endGo')) $('endGo').onclick = ()=>location.reload();
 const cbPause = ()=>{ Audio2.play('klik'); buka(S && S.nama ? 'sPause' : 'sMenu'); };
 if($('setGo')) $('setGo').onclick = cbPause;
@@ -2075,6 +2361,78 @@ if($('setKomik')) $('setKomik').onclick = e=>{ komik=!komik;
   if(!komik){ resetBalon(); bannerSet(''); $('box').classList.remove('sembunyi','komik'); } };
 if($('setBisu')) $('setBisu').onclick = e=>{ bisu=!bisu; Audio2.setBisu(bisu);
   e.target.textContent = bisu?'Bunyikan Kembali':'Bisukan Semua Suara'; };
+
+/* ---------- handlers untuk modal pengaturan (modSet) ---------- */
+window.pilihTabSet = function(tab) {
+  Audio2.play('klik');
+  const mapping = { audio: 'Audio', game: 'Game', lang: 'Lang' };
+  ['audio', 'game', 'lang'].forEach(t => {
+    const btn = $('tabBtn' + mapping[t]);
+    const content = $('tabContent' + mapping[t]);
+    const isCur = (t === tab);
+    if (btn) btn.classList.toggle('active', isCur);
+    if (content) content.style.display = isCur ? 'block' : 'none';
+  });
+};
+
+if ($('volM2')) $('volM2').oninput = e => {
+  Audio2.setVol('musik', e.target.value / 100);
+  if ($('lblM2')) $('lblM2').textContent = e.target.value;
+  if ($('volM')) { $('volM').value = e.target.value; $('lblM').textContent = e.target.value; }
+};
+if ($('volE2')) $('volE2').oninput = e => {
+  Audio2.setVol('efek', e.target.value / 100);
+  if ($('lblE2')) $('lblE2').textContent = e.target.value;
+  if ($('volE')) { $('volE').value = e.target.value; $('lblE').textContent = e.target.value; }
+};
+if ($('volT2')) $('volT2').oninput = e => {
+  kecepatan = +e.target.value;
+  if ($('lblT2')) $('lblT2').textContent = e.target.value;
+  if ($('volT')) { $('volT').value = e.target.value; $('lblT').textContent = e.target.value; }
+};
+if ($('setBisu2')) $('setBisu2').onclick = () => {
+  Audio2.play('klik');
+  bisu = !bisu;
+  Audio2.setBisu(bisu);
+  const txt = bisu ? 'Bunyikan Kembali' : 'Bisukan Semua Suara';
+  if ($('setBisu2')) $('setBisu2').textContent = txt;
+  if ($('setBisu')) $('setBisu').textContent = txt;
+};
+if ($('setKomik2')) $('setKomik2').onclick = () => {
+  Audio2.play('klik');
+  komik = !komik;
+  const txt = 'Tampilan Dialog: ' + (komik ? 'Komik' : 'Kotak Bawah');
+  if ($('setKomik2')) $('setKomik2').textContent = txt;
+  if ($('setKomik')) $('setKomik').textContent = txt;
+  if (!komik) { resetBalon(); bannerSet(''); $('box').classList.remove('sembunyi', 'komik'); }
+};
+if ($('setReset')) $('setReset').onclick = () => {
+  Audio2.play('klik');
+  if (confirm('Yakin ingin mereset data dan mulai ulang permainan?')) {
+    localStorage.removeItem('tcos_save_v2');
+    location.reload();
+  }
+};
+if ($('btnLangId')) $('btnLangId').onclick = () => {
+  Audio2.play('klik');
+  $('btnLangId').classList.add('active');
+  $('btnLangId').style.borderColor = '#8b6bd9';
+  $('btnLangId').style.background = 'rgba(139,107,217,0.18)';
+  $('btnLangEn').classList.remove('active');
+  $('btnLangEn').style.borderColor = '#ccc';
+  $('btnLangEn').style.background = 'rgba(0,0,0,0.03)';
+  if ($('langNotice')) {
+    $('langNotice').style.display = 'block';
+    $('langNotice').textContent = 'Bahasa Indonesia aktif.';
+  }
+};
+if ($('btnLangEn')) $('btnLangEn').onclick = () => {
+  Audio2.play('klik');
+  if ($('langNotice')) {
+    $('langNotice').style.display = 'block';
+    $('langNotice').textContent = 'Fitur Bahasa Inggris (English) akan segera hadir di pembaruan berikutnya!';
+  }
+};
 
 /* pilihan boss memakai jalur yang sama */
 const AKSILABEL = {diam:'Bertahan diam', balas:'Membalas', lapor:'Melaporkan', pergi:'Mencari dukungan'};
