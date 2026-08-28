@@ -4092,10 +4092,6 @@ const NASKAH = [
         "intro": [
           {
             "who": null,
-            "text": "Setelah menyelesaikan level 2, gembok yang mengunci level 3 akan terbuka dan pemain bisa melanjutkan ke level berikutnya. Namun untuk melanjutkannya harus sesuai dengan point/item (mental, hope, courage) yang mereka dapatkan, apakah sudah memenuhi syarat untuk melanjutkan ke level berikutnya atau belum."
-          },
-          {
-            "who": null,
             "text": "Hari itu sebenarnya terasa cukup menyenangkan. {NAMA} baru saja menyelesaikan tugas dan ingin membagikan sedikit momen kepada teman-temannya. Ia mengambil sebuah foto dirinya dan mengunggahnya ke media sosial."
           },
           {
@@ -4416,7 +4412,7 @@ const NASKAH = [
           },
           {
             "who": "Teman",
-            "text": "Rey, aku lihat postingannya. Kamu nggak apa-apa?"
+            "text": "{NAMA}, aku lihat postingannya. Kamu nggak apa-apa?"
           },
           {
             "who": null,
@@ -5187,6 +5183,21 @@ const LATAR = {
 };
 
 const KATA_LATAR = [
+  /* Level 3 Scene 3 - Foto Viral & Pesan Teman */
+  [/\b(Foto (Reyan|Rafa|Alya|Mika|\{NAMA\})?.*telah disebarkan|Foto tersebut sudah diunggah ulang|ini yang kemarin viral|Sebarin lagi|Semua orang bisa lihat foto ini)\b/i, 'cg_l9_viral'],
+  [/\b(pesan dari seseorang yang ia percaya|postingannya\. Kamu nggak apa-apa|terdiam cukup lama|terlalu fokus menghadapi komentar tersebut sendirian)\b/i, 'cg_l9_pesan_teman'],
+
+  /* Level 3 Scene 2 - Cyberbullying Notifikasi Beruntun */
+  [/\b(TING!|notifikasi terus berdatangan|kembali mengambil HP)\b/i, 'cg_l8_notif_ting'],
+  [/\b(Keesokan harinya.*?kembali membuka media sosial|Masih belum dihapus juga|serangan beramai-ramai|sasaran banyak orang)\b/i, 'cg_l8_notif'],
+
+  /* Level 3 Scene 1 - Cyberbullying Media Sosial */
+  [/\b(menyimpan screenshot komentar sebagai bukti|menemui orang tuanya di ruang keluarga|menunjukkan HP-nya kepada orang tuanya|Komentar mereka bukan ukuran dari siapa kamu)\b/i, 'cg_l7_sosmed_lapor'],
+  [/\b(mulai memblokir akun-akun|suasana di kolom komentarnya menjadi lebih tenang|nggak perlu lihat komentar mereka lagi)\b/i, 'cg_l7_sosmed_pergi'],
+  [/\b(memilih untuk melakukan aktivitas lain|Lebih baik aku berhenti lihat)\b/i, 'cg_l7_sosmed_diam'],
+  [/\b(pun membalas komentar tersebut|membalas salah satu akun yang mengejeknya|Kalian siapa sih|Ngurusin hidup orang terus|Baper banget|situasi pun semakin panas)\b/i, 'cg_l7_sosmed_marah'],
+  [/\b(mengunggahnya ke media sosial|muncul komentar dari akun yang tidak ia kenal|Wah, kusam banget|Kurang bagus kalau orang kayak gini|Siapa juga yang mau lihat beginian|buka kolom komentar lagi)\b/i, 'cg_l7_sosmed'],
+
   [/\b(sengaja mendorong (bahu )?(Reyan|Rafa|Alya|Mika|\{NAMA\})?.*hingga ia (terjatuh|kehilangan keseimbangan))\b/i, 'cg_l4_taman_jatuh'],
   [/\b(Setelah berhasil melewati berbagai ejekan verbal di sekolah|Awalnya permainan berlangsung|sembilan!|sengaja mendorong)\b/i, 'cg_l4_taman'],
   [/\b(memilih tidak membalas( perlakuan teman-temannya)?\. Ia hanya (menundukkan kepala|memeluk lututnya))\b/i, 'cg_l4_taman_diam'],

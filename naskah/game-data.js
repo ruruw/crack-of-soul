@@ -2608,10 +2608,6 @@ const NASKAH = [
         "intro": [
           {
             "who": null,
-            "text": "Setelah menyelesaikan level 2, gembok yang mengunci level 3 akan terbuka dan pemain bisa melanjutkan ke level berikutnya. Namun untuk melanjutkannya harus sesuai dengan point/item (mental, hope, courage) yang mereka dapatkan, apakah sudah memenuhi syarat untuk melanjutkan ke level berikutnya atau belum."
-          },
-          {
-            "who": null,
             "text": "Hari itu sebenarnya terasa cukup menyenangkan. {NAMA} baru saja menyelesaikan tugas dan ingin membagikan sedikit momen kepada teman-temannya. Ia mengambil sebuah foto dirinya dan mengunggahnya ke media sosial."
           },
           {
@@ -2932,7 +2928,7 @@ const NASKAH = [
           },
           {
             "who": "Teman",
-            "text": "Rey, aku lihat postingannya. Kamu nggak apa-apa?"
+            "text": "{NAMA}, aku lihat postingannya. Kamu nggak apa-apa?"
           },
           {
             "who": null,
@@ -3045,7 +3041,7 @@ const NASKAH = [
     "tipe": "boss",
     "level": "Final Boss",
     "nama": "The Crack of Soul",
-    "bg": "crack",
+    "bg": "cg_bossf",
     "giliran": [
       {
         "label": "1",
