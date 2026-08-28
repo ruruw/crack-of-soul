@@ -5082,6 +5082,18 @@ const LATAR = {
 };
 
 const KATA_LATAR = [
+  [/\b(sengaja mendorong (bahu )?(Reyan|Rafa|Alya|Mika|\{NAMA\})?.*hingga ia (terjatuh|kehilangan keseimbangan))\b/i, 'cg_l4_taman_jatuh'],
+  [/\b(Setelah berhasil melewati berbagai ejekan verbal di sekolah|Awalnya permainan berlangsung|sembilan!|sengaja mendorong)\b/i, 'cg_l4_taman'],
+  [/\b(memilih tidak membalas( perlakuan teman-temannya)?\. Ia hanya (menundukkan kepala|memeluk lututnya))\b/i, 'cg_l4_taman_diam'],
+  [/\b(membalas dorongan yang diterimanya|merasa marah karena terus didorong)\b/i, 'cg_l4_taman_marah'],
+  [/\b((memutuskan|memilih) meninggalkan permainan|berjalan (menjauh )?menuju bangku taman)\b/i, 'cg_l4_taman_pergi'],
+  [/\b((menghampiri|mencari bantuan kepada) orang dewasa yang( sedang)? berada di taman)\b/i, 'cg_l4_taman_lapor'],
+  [/\b(Bola mengenai tepat di bahu|Strike! Mantapkan\?|Keren, Bro! Udah kayak nembak pin bowling|memegang bahunya yang sakit)\b/i, 'cg_l5_bola_kena'],
+  [/\b(mencoba menjauh dan duduk di bangku taman|Mereka mengambil bola yang ada di lapangan|Woy, liat tuh\. Ada papan target|Hati-hati loh, ntar kena mukanya)\b/i, 'cg_l5_bola'],
+  [/\b(memilih menarik napas panjang dan tidak membalas|tetap diam meskipun ejekan masih terdengar)\b/i, 'cg_l5_bola_diam'],
+  [/\b(mengambil bola yang mengenai tubuhnya|suasana berubah menjadi keributan)\b/i, 'cg_l5_bola_marah'],
+  [/\b(memilih mendekati sahabatnya|Temannya langsung berdiri di samping)\b/i, 'cg_l5_bola_pergi'],
+  [/\b(segera menghampiri ayah salah satu temannya|mendatangi anak-anak yang melakukan bullying)\b/i, 'cg_l5_bola_lapor'],
   [/\b(pergi ke perpustakaan untuk mengerjakan tugas kelompok|sekelompok siswa yang sebelumnya (sering )?mengejek|duduk membelakangi mereka di meja baca|Duduk di situ terus|berhenti menulis\. Tangan yang memegang pulpen menegang|Suasana perpustakaan yang seharusnya tenang berubah menjadi tidak nyaman)\b/i, 'cg_l3_perpus'],
   [/\b(Meskipun ejekan masih terdengar( beberapa saat)?)\b/i, 'cg_l1_perpus_diam'],
   [/\b(Suara mereka semakin keras hingga mengganggu pengunjung perpustakaan lainnya)\b/i, 'cg_l1_perpus_marah'],
@@ -5098,7 +5110,6 @@ const KATA_LATAR = [
   [/\b(membalas mengejek penampilan mereka|balik mengejek penampilan mereka|tidak mampu lagi menahan emosinya)\b/i, 'cg_l1_marah'],
   [/\b(meninggalkan kelas dan pergi ke tempat lain)\b/i, 'cg_l1_pergi'],
   [/\b(menghampiri guru untuk menceritakan|ingin bicara sebentar|mendekati guru piket|menghampiri guru piket)\b/i, 'cg_l1_lapor'],
-  [/\b(Guru memanggil siswa yang mengejek)\b/i, 'cg_l1_lapor2'],
   [/\b(Guru memanggil siswa yang mengejek)\b/i, 'cg_l1_guru_marah'],
   [/\b(jam istirahat,.*?menghampiri teman|teman yang paling ia percaya)\b/i, 'cg_l1_teman'],
   [/\b(pergi ke kantin untuk makan siang seorang diri)\b/i, 'cg_l2_kantin'],
