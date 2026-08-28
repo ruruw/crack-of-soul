@@ -267,7 +267,10 @@
   .track-dot::before { content: "🔒"; font-size: 16px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid #4b5563; background: #1f2937; }
   .track-dot.active { color: #a855f7; }
   .track-dot.active::before { content: "😈"; border-color: #a855f7; background: rgba(168,85,247,0.2); box-shadow: 0 0 8px rgba(168,85,247,0.5); }
+  .track-dot.complete { color: #10b981; }
+  .track-dot.complete::before { content: "✓"; border-color: #10b981; background: rgba(16,185,129,0.2); }
   .track-line { width: 24px; height: 1px; background: #4b5563; margin-top: -12px; }
+  .track-line.complete { background: #10b981; }
   
   .edu-right { display: flex; flex-direction: column; gap: 12px; }
   .edu-grid { display: flex; flex-direction: column; gap: 12px; }
@@ -1266,6 +1269,103 @@
   </div>
 </div>
 
+<div class="scr" id="sEdu2">
+  <div class="edu-container">
+    <div class="edu-left">
+      <div class="edu-img-panel">
+        <div class="edu-sub">LEVEL 2 COMPLETE!</div>
+        <h1 class="edu-title">PHYSICAL BULLYING</h1>
+        <p class="edu-desc">Kamu telah mengalahkan Fear! Sekarang, mari pahami lebih dalam tentang physical bullying dan bagaimana kita bisa melindungi diri serta orang lain.</p>
+        <div class="edu-img-placeholder" style="display:none">
+          <!-- Illustration place -->
+        </div>
+      </div>
+      
+      <div class="edu-box">
+        <div class="edu-box-title">REWARD DIDAPATKAN</div>
+        <div class="edu-reward-item"><span class="i">🌸</span><span>Hope</span><span class="v check">✓ +10</span></div>
+        <div class="edu-reward-item"><span class="i">⭐</span><span>Courage</span><span class="v check">✓ +5</span></div>
+        <div class="edu-reward-item"><span class="i">🛡️</span><span>Badge</span><span class="v">Brave Survivor</span></div>
+      </div>
+      
+      <div class="edu-box">
+        <div class="edu-box-title">PERJALANANMU</div>
+        <div class="edu-map-track">
+          <div class="track-dot complete">LEVEL 1</div>
+          <div class="track-line complete"></div>
+          <div class="track-dot active">LEVEL 2</div>
+          <div class="track-line"></div>
+          <div class="track-dot">LEVEL 3</div>
+          <div class="track-line"></div>
+          <div class="track-dot">FINAL BOSS</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="edu-right">
+      <div class="edu-grid">
+        <div class="edu-box span-2">
+          <div class="edu-box-header"><span class="i">💬</span> APA ITU PHYSICAL BULLYING?</div>
+          <p>Physical bullying adalah tindakan menyakiti orang lain secara langsung menggunakan kekerasan fisik, seperti memukul, menendang, mendorong, melempar barang, mencubit, atau merusak barang milik korban. Tindakan ini dapat menyebabkan luka fisik dan trauma psikologis.</p>
+        </div>
+        
+        <div class="edu-box highlight">
+          <div class="edu-box-header"><span class="i">⭐</span> INGAT!</div>
+          <p>Setiap orang berhak merasa aman. Kekerasan bukanlah cara untuk menyelesaikan masalah. Berani meminta bantuan adalah langkah yang tepat.</p>
+        </div>
+        
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">📢</span> CONTOH PERILAKU PHYSICAL BULLYING</div>
+          <ul class="edu-list">
+            <li>Memukul, menendang, atau mendorong</li>
+            <li>Melempar benda ke arah seseorang</li>
+            <li>Mencubit atau menarik paksa</li>
+            <li>Merusak barang milik orang lain</li>
+            <li>Menghalangi atau mengurung seseorang</li>
+          </ul>
+        </div>
+        
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">💔</span> DAMPAKNYA</div>
+          <ul class="edu-list">
+            <li>Luka fisik dan rasa sakit</li>
+            <li>Trauma dan ketakutan</li>
+            <li>Tidak nyaman dan takut ke sekolah</li>
+            <li>Kehilangan rasa aman</li>
+            <li>Gangguan psikologis jangka panjang</li>
+          </ul>
+        </div>
+        
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">🛡️</span> APA YANG HARUS DILAKUKAN?</div>
+          <ul class="edu-list check">
+            <li>Segera menjauh dari pelaku dan cari tempat aman.</li>
+            <li>Berteriak minta tolong atau cari bantuan guru.</li>
+            <li>Laporkan kejadian kepada guru, orang tua, atau pihak sekolah.</li>
+            <li>Jangan melawan dengan kekerasan.</li>
+            <li>Dukung diri sendiri dan jangan menyalahkan diri sendiri.</li>
+          </ul>
+        </div>
+
+        <div class="edu-box">
+          <div class="edu-box-header"><span class="i">👥</span> JIKA KAMU MENJADI SAKSI</div>
+          <ul class="edu-list heart">
+            <li>Jangan diam, bantu korban jika memungkinkan.</li>
+            <li>Panggil guru atau orang dewasa terdekat.</li>
+            <li>Dampingi korban dan berikan dukungan.</li>
+            <li>Jangan merekam atau menyebarkan kejadian.</li>
+            <li>Jangan ikut tertawa atau mendukung pelaku.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="btn btn-lanjut" id="eduGo2">LANJUT KE LEVEL 3 &raquo;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="scr" id="sOver">
   <div class="sub">Berhenti Sejenak</div>
   <h1 style="font-size:clamp(20px,5.5vw,28px)">Hari ini terasa<br>terlalu berat.</h1>
@@ -1311,6 +1411,15 @@
 <div class="scr" id="sPause">
   <div class="sub">Jeda</div>
   <h1 style="font-size:clamp(20px,5vw,26px)">Permainan Dijeda</h1>
+  
+  <!-- DEVELOPER LEVEL SELECTOR -->
+  <div style="margin: 15px 0; padding: 10px; border: 1px dashed #e74c3c; border-radius: 6px; background: rgba(231, 76, 60, 0.15); width: 85%; text-align: center; box-sizing: border-box;">
+    <div style="font-size: 13px; color: #e74c3c; font-weight: bold; margin-bottom: 7px; letter-spacing: 1px;">🔧 DEVELOPER LEVEL SELECTOR</div>
+    <select id="cheatLompat" style="padding: 10px 16px; border-radius: 4px; border: 1px solid #e74c3c; background: #150d1b; color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; width: 100%; box-sizing: border-box; outline: none; text-align: center;">
+      <option value="">-- Pilih Adegan --</option>
+    </select>
+  </div>
+
   <button class="btn" id="pLanjut">Lanjutkan</button>
   <button class="btn ghost" id="pUlang">Ulangi Adegan</button>
   <button class="btn ghost" id="pSet">Pengaturan</button>
@@ -1663,9 +1772,9 @@ function lanjutBaris(v){
     const b = antrian[idxAntrian++];
     Audio2.play('dialog');
     if(b.who) pastikanLawan(b.who);
-    else if(adegan && adegan.tipe !== 'boss'){
+    if(adegan && adegan.tipe !== 'boss'){
       const lk = latarDariTeks(b.text);
-      if(lk && lk !== $('bgart').dataset.k){ $('bg').className = 'bg-' + lk; pasangLatar(lk); pasangDepan(lk); }
+      if(lk && lk.startsWith('cg_') && lk !== $('bgart').dataset.k){ $('bg').className = 'bg-' + lk; pasangLatar(lk); pasangDepan(lk); }
     }
     ketik(isi(b.text), b.who ? isi(b.who) : '', b.aksi ? isi(b.aksi) : '');
     simpanProgress();
@@ -1798,6 +1907,8 @@ function levelSelesai(){
   
   if (lvl === 'Boss 1' || lvl === 'Level 1') {
     buka('sEdu');
+  } else if (lvl === 'Boss 2' || lvl === 'Level 2') {
+    buka('sEdu2');
   } else {
     $('lvKind').textContent = 'Level Selesai';
     $('lvTitle').textContent = lvl + ' terlewati';
@@ -1939,6 +2050,7 @@ function tampilPeta(){
 if($('petaGo')) $('petaGo').onclick = ()=>{ Audio2.play('klik'); tutup(); updateStat(); mulaiLangkah(); };
 if($('lvGo')) $('lvGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('eduGo')) $('eduGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
+if($('eduGo2')) $('eduGo2').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('overGo')) $('overGo').onclick = ()=>{ Audio2.play('klik'); ulangiAdegan(); };
 if($('endGo')) $('endGo').onclick = ()=>location.reload();
 const cbPause = ()=>{ Audio2.play('klik'); buka(S && S.nama ? 'sPause' : 'sMenu'); };
@@ -2165,6 +2277,32 @@ window.addEventListener('resize', taruhCast);
 // Attempt to lock orientation to portrait via JS (works in some PWA/fullscreen contexts)
 if (screen.orientation && screen.orientation.lock) {
   screen.orientation.lock('portrait').catch(e => console.log('Orientation lock unsupported or denied'));
+}
+
+// Populate developer level selector
+const cheatSel = $('cheatLompat');
+if (cheatSel) {
+  URUTAN.forEach(id => {
+    const opt = document.createElement('option');
+    opt.value = id;
+    opt.textContent = id;
+    cheatSel.appendChild(opt);
+  });
+  cheatSel.onchange = () => {
+    const val = cheatSel.value;
+    if (val) {
+      const idx = URUTAN.indexOf(val);
+      if (idx !== -1) {
+        Audio2.play('klik');
+        S.langkah = idx;
+        S._dalamPenutupBoss = false;
+        S._selesaiBoss = false;
+        tutup(); // Close pause screen
+        mulaiLangkah();
+        cheatSel.value = ""; // Reset dropdown selection
+      }
+    }
+  };
 }
 
 S = baru(); updateStat();

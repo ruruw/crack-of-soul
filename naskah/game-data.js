@@ -1467,10 +1467,6 @@ const NASKAH = [
         "intro": [
           {
             "who": null,
-            "text": "untuk deskripsi karakter, skor per item, dan bentuk permainan sama seperti yang telah dijelaskan di atas."
-          },
-          {
-            "who": null,
             "text": "Setelah berhasil melewati berbagai ejekan verbal di sekolah, {NAMA} berharap hari liburnya akan terasa lebih menyenangkan. Sore itu, ia pergi ke taman bermain dekat rumahnya untuk bermain petak umpet bersama anak-anak di lingkungan sekitar."
           },
           {
@@ -1897,10 +1893,6 @@ const NASKAH = [
         "intro": [
           {
             "who": null,
-            "text": "Level 2 scene 2"
-          },
-          {
-            "who": null,
             "text": "Setelah didorong oleh teman-temannya, {NAMA} masih berada di taman. Ia mencoba menjauh dan duduk di bangku taman sambil menenangkan diri. Namun, teman-teman yang tadi mendorong dan mengejeknya belum berhenti. Mereka mengambil bola yang ada di lapangan lalu sengaja melemparkannya ke arah {NAMA}. Bola mengenai bahunya dan membuat mereka kembali tertawa."
           },
           {
@@ -2309,7 +2301,7 @@ const NASKAH = [
               },
               {
                 "who": "Teman",
-                "text": "“Boleh. Kenapa, Yan? Kamu kelihatan takut.”"
+                "text": "“Boleh. Kenapa, {NAMA}? Kamu kelihatan takut.”"
               },
               {
                 "who": "{NAMA}",
@@ -2317,7 +2309,7 @@ const NASKAH = [
               },
               {
                 "who": "Teman",
-                "text": "“Kamu nggak salah, Yan. Dan kamu nggak harus menghadapi ini sendirian. Kalau kamu mau, kita bisa cari bantuan bareng. Kita bisa cerita ke guru atau orang tua kita yang bisa dipercaya. Aku juga bisa nemenin kamu.”"
+                "text": "“Kamu nggak salah, {NAMA}. Dan kamu nggak harus menghadapi ini sendirian. Kalau kamu mau, kita bisa cari bantuan bareng. Kita bisa cerita ke guru atau orang tua kita yang bisa dipercaya. Aku juga bisa nemenin kamu.”"
               }
             ]
           },
@@ -2443,7 +2435,7 @@ const NASKAH = [
               },
               {
                 "who": "Teman",
-                "text": "“Boleh. Kenapa, Yan? Kamu kelihatan takut.”"
+                "text": "“Boleh. Kenapa, {NAMA}? Kamu kelihatan takut.”"
               },
               {
                 "who": "{NAMA}",
@@ -2451,7 +2443,7 @@ const NASKAH = [
               },
               {
                 "who": "Teman",
-                "text": "“Kamu nggak salah, Yan. Dan kamu nggak harus menghadapi ini sendirian. Kalau kamu mau, kita bisa cari bantuan bareng. Kita bisa cerita ke guru atau orang tua kita yang bisa dipercaya. Aku juga bisa nemenin kamu.”"
+                "text": "“Kamu nggak salah, {NAMA}. Dan kamu nggak harus menghadapi ini sendirian. Kalau kamu mau, kita bisa cari bantuan bareng. Kita bisa cerita ke guru atau orang tua kita yang bisa dipercaya. Aku juga bisa nemenin kamu.”"
               }
             ]
           },
@@ -2492,7 +2484,7 @@ const NASKAH = [
     "tipe": "boss",
     "level": "Boss 2",
     "nama": "Physical Trauma",
-    "bg": "boss2",
+    "bg": "cg_boss2",
     "giliran": [
       {
         "label": "1",
