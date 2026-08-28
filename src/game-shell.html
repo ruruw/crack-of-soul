@@ -356,6 +356,22 @@
     box-shadow:0 0 14px rgba(232,115,92,.55)}
   .kena{animation:shake .45s}
   @keyframes shake{10%,90%{transform:translateX(-2px)}30%,70%{transform:translateX(4px)}50%{transform:translateX(-5px)}}
+  .hantam{animation:hantamShake .55s cubic-bezier(.36,.07,.19,.97) both;}
+  @keyframes hantamShake {
+    10%, 90% { transform: translate3d(-5px, -3px, 0) rotate(-1deg); }
+    20%, 80% { transform: translate3d(6px, 4px, 0) rotate(1.5deg); filter: drop-shadow(0 0 24px rgba(239,68,68,0.9)); }
+    30%, 50%, 70% { transform: translate3d(-7px, -4px, 0) rotate(-1.5deg); }
+    40%, 60% { transform: translate3d(7px, 3px, 0) rotate(1deg); }
+  }
+  .red-flash {
+    position: fixed; inset: 0; pointer-events: none; z-index: 99;
+    background: radial-gradient(circle at center, transparent 30%, rgba(220, 38, 38, 0.5) 90%);
+    animation: flashOut .5s forwards;
+  }
+  @keyframes flashOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
 
   /* ---- pengaturan ---- */
   .setrow{display:flex;align-items:center;gap:12px;width:100%;max-width:400px;margin:10px 0;font-size:14px}
@@ -1958,7 +1974,7 @@ function ubahStat(delta){
   if(delta < 0){
     const t=$('cast') && $('cast').querySelector('.slot-l, .slot-c');
     if(t){ t.classList.remove('kaget'); void t.offsetWidth; t.classList.add('kaget'); }
-    if (navigator.vibrate) { try { navigator.vibrate([100, 50, 150]); } catch(e) {} }
+    triggerVibrate([100, 50, 150]);
   }
   toast((delta>0?'+':'') + delta + ' Hope · Courage · Mental');
   return ['hope','courage','mental'].some(k => S[k] < AMBANG);
@@ -2138,19 +2154,39 @@ function giliranBoss(){
   ketik(isi(b.text), isi(b.who));
   simpanProgress();
 }
+function triggerVibrate(pattern) {
+  try {
+    if (window.navigator && typeof window.navigator.vibrate === 'function') {
+      window.navigator.vibrate(pattern);
+    }
+  } catch(e) {}
+}
+
+function triggerDamageEffect() {
+  triggerVibrate([150, 70, 220]);
+  const app = $('app') || document.body;
+  app.classList.remove('hantam');
+  void app.offsetWidth;
+  app.classList.add('hantam');
+
+  const flash = document.createElement('div');
+  flash.className = 'red-flash';
+  document.body.appendChild(flash);
+  setTimeout(() => flash.remove(), 550);
+}
+
 function jawabBoss(o){
   $('choices').innerHTML=''; pilihanAktif=null;
   const benar = o._o.benar;
   if(benar){
     Audio2.play('bossKena');
     $('app').classList.remove('kena'); void $('app').offsetWidth; $('app').classList.add('kena');
-    if (navigator.vibrate) { try { navigator.vibrate(60); } catch(e) {} }
+    triggerVibrate(60);
     setBossHP(bossState.hp - 20);
     toast('Boss melemah');
   } else {
     Audio2.play('bossSerang');
-    $('app').classList.remove('kena'); void $('app').offsetWidth; $('app').classList.add('kena');
-    if (navigator.vibrate) { try { navigator.vibrate([150, 70, 220]); } catch(e) {} }
+    triggerDamageEffect();
     const jatuh = ubahStat(-15);
     if(jatuh){ setTimeout(()=>gameOver(), 700); return; }
   }
