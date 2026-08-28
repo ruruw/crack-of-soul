@@ -3097,7 +3097,7 @@ const NASKAH = [
       {
         "label": "4",
         "final": false,
-        "serangan": "Kamu sendirian. Tidak akan ada yang membantumu Jika pemain memilih beberapa jawaban yang positif, sistem “Mereka yang Peduli Padamu” akan aktif dan dapat dipilih oleh pemain. Karakternya yaitu Ibu, Guru bk, Sahabat, dan Teman kelas. Orang-orang yang dapat memberikan dukungan: 1\\. Ibu 2\\. Guru BK 3\\. Sahabat 4\\. Teman kelas Mereka memberikan dukungan kepada {NAMA} dan mengingatkannya bahwa ia tidak harus menghadapi masalah seorang diri. Jika pemain memilih salah satu orang tersebut sebagai *support system,* maka akan muncul dialog yang dapat memberikan dukungan dan semangat kepada korban. Contoh dialog: Ibu: Kamu tidak harus menghadapi semuanya sendirian Guru bk: Apa yang terjadi bukan salahmu, kamu boleh meminta bantuan. Sahabat: Aku ada disini, kamu tidak sendirian Teman Kelas: Kami akan selalu bersamamu, jangan takut Setelah Support System aktif, Hope dan Courage {NAMA} bertambah dan HP Boss mulai berkurang. Meskipun mendapat dukungan, The Crack of Soul belum menyerah. Boss kembali mencoba membuat {NAMA} meragukan dirinya sendiri.",
+        "serangan": "Kamu sendirian. Tidak akan ada yang membantumu",
         "opsi": [
           {
             "label": "A",
