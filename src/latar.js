@@ -219,7 +219,7 @@ function pasangLatar(kind) {
 
   if (kind.startsWith('cg_')) {
     const cg_file = (typeof S !== 'undefined' && S && S.karakter) ? `${kind}_${S.karakter}` : kind;
-    host.innerHTML = `<img src="${cg_file}.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;" alt="${cg_file}" onerror="if(this.getAttribute('src') !== '${kind}.jpg') this.src='${kind}.jpg'; else this.style.opacity='0';">`;
+    host.innerHTML = `<img src="${cg_file}.jpg" draggable="false" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block; pointer-events:none; -webkit-touch-callout:none; -webkit-user-drag:none; user-select:none;" alt="" onerror="if(this.getAttribute('src') !== '${kind}.jpg') this.src='${kind}.jpg'; else this.style.opacity='0';">`;
   } else {
     const isi = LATAR[kind] || '';
     host.innerHTML = isi
