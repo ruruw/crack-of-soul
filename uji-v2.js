@@ -7,8 +7,12 @@ const {chromium}=require('playwright');
  await p.goto('file://'+__dirname+'/TheCrackOfSoul-v2.html');
  await p.waitForTimeout(400);
  await p.click('#goMenu'); await p.waitForTimeout(500);
- await p.click('#mMulai'); await p.waitForTimeout(600);
+  if(await p.locator('#mMulai2').count()) await p.click('#mMulai2');
+  else if(await p.locator('#mMulai').count()) await p.click('#mMulai');
+  await p.waitForTimeout(600);
  await p.fill('#nama','Nadira');
+ await p.fill('#sekolah','SMP Negeri 1 Surabaya');
+ await p.fill('#kelas','IX-A');
  await p.screenshot({path:'shots/v2-1-char.png'});
  await p.click('#charGo'); await p.waitForTimeout(700);
  if(await p.locator('#sPeta.on').count()){ await p.click('#petaGo'); await p.waitForTimeout(800); }

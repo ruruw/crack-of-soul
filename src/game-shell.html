@@ -235,10 +235,12 @@
     font-family:'Spectral',Georgia,serif;font-style:italic;font-size:15px;font-weight:600;
     padding:2px 6px;border-radius:3px;transform:rotate(-1deg);box-shadow:0 3px 8px rgba(0,0,0,.4)}
   .card .ciri{font-size:10px;color:var(--dim);margin-top:5px;line-height:1.3}
-  #namebox{margin-top:16px;width:100%;max-width:430px}
-  #nama{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);
-    background:rgba(255,255,255,.06);color:var(--ink);font-size:16px;font-family:inherit;text-align:center}
-  #nama:focus{outline:none;border-color:var(--acc)}
+  #namebox{margin-top:16px;width:100%;max-width:430px;background:rgba(20,15,28,.75);border:1px solid rgba(168,85,247,.25);border-radius:14px;padding:14px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+  .form-group{display:flex;flex-direction:column;gap:4px;text-align:left}
+  .form-label{font-size:9.5px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+  #namebox input{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);
+    background:rgba(255,255,255,.06);color:var(--ink);font-size:14px;font-family:inherit}
+  #namebox input:focus{outline:none;border-color:var(--acc);background:rgba(255,255,255,.1)}
   #sChar > * { flex-shrink: 0; }
 
   /* ---- peta level ---- */
@@ -343,6 +345,19 @@
   .end-btn.ghost { background: transparent; border-color: rgba(255,255,255,0.1); color: var(--muted); }
   .end-btn:active { transform: scale(0.98); }
   .end-footer-tag { font-size: 10.5px; color: #9ca3af; text-align: center; margin-top: 2px; }
+
+  /* ---- sync card ---- */
+  .sync-card { background: rgba(22, 16, 36, 0.92); border: 1px solid rgba(139, 107, 217, 0.35); }
+  .sync-status-row { display: flex; align-items: center; gap: 12px; text-align: left; }
+  .sync-icon { font-size: 24px; flex-shrink: 0; }
+  .sync-title { font-size: 12px; font-weight: 700; color: #f3e8ff; margin-bottom: 2px; }
+  .sync-desc { font-size: 10.5px; color: #a1a1aa; line-height: 1.4; }
+  .sync-card.sukses { border-color: rgba(74, 222, 128, 0.5); background: rgba(20, 35, 25, 0.88); }
+  .sync-card.sukses .sync-title { color: #86efac; }
+  .sync-card.offline { border-color: rgba(251, 191, 36, 0.5); background: rgba(35, 28, 15, 0.88); }
+  .sync-card.offline .sync-title { color: #fde047; }
+  .btn-sync { background: rgba(139, 107, 217, 0.25); border: 1px solid rgba(168, 85, 247, 0.4); color: #f3e8ff; border-radius: 8px; cursor: pointer; }
+  .btn-sync:active { transform: scale(0.98); }
 
   /* ---- boss ---- */
   #bosshud{position:relative;z-index:6;padding:2px 13px 6px;display:none}
@@ -1276,11 +1291,24 @@
   </div>
 
   <div id="namebox">
-    <div style="font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase;
-      margin-bottom:6px;text-align:center">Beri nama karaktermu</div>
-    <input id="nama" maxlength="12" placeholder="Tulis nama karaktermu">
-    <div style="font-size:11px;color:var(--dim);margin-top:6px;text-align:center">
-      Nama ini akan dipakai di seluruh cerita dan dialog.</div>
+    <div style="font-size:11px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;
+      margin-bottom:10px;text-align:center;font-weight:700">Data Pemain & Karakter</div>
+    <div class="form-group">
+      <label class="form-label">Nama Karakter / Siswa *</label>
+      <input id="nama" maxlength="18" placeholder="Tulis nama karaktermu">
+    </div>
+    <div style="display:flex;gap:10px;margin-top:10px">
+      <div class="form-group" style="flex:1.2">
+        <label class="form-label">Asal Sekolah *</label>
+        <input id="sekolah" maxlength="35" placeholder="Contoh: SMPN 1 / SMAN 2">
+      </div>
+      <div class="form-group" style="flex:0.8">
+        <label class="form-label">Kelas</label>
+        <input id="kelas" maxlength="15" placeholder="Contoh: IX-B / X-1">
+      </div>
+    </div>
+    <div style="font-size:10.5px;color:var(--dim);margin-top:10px;text-align:center;line-height:1.4">
+      Nama ini dipakai dalam cerita & data hasil akan tercatat di sistem guru.</div>
   </div>
 
   <div class="kertas" style="width:100%;max-width:430px;margin-top:14px">
@@ -1654,6 +1682,19 @@
       </p>
     </div>
 
+    <!-- Kartu Sinkronisasi Data Guru (Google Sheets) -->
+    <div class="end-card sync-card" id="endSyncCard" style="margin-top:6px;">
+      <div class="end-card-header">📊 LAPORAN HASIL KE GURU 📊</div>
+      <div class="sync-status-row">
+        <div class="sync-icon" id="syncIcon">⏳</div>
+        <div class="sync-info" style="flex:1;">
+          <div class="sync-title" id="syncTitle">Menyimpan data hasil permainan...</div>
+          <div class="sync-desc" id="syncDesc">Data Anda sedang dikirim ke Google Sheets guru/peneliti.</div>
+        </div>
+      </div>
+      <button class="btn btn-sync" id="btnSyncRetry" style="display:none;margin-top:10px;width:100%;font-size:11.5px;padding:8px 12px;">🔄 Kirim Ulang Data</button>
+    </div>
+
     <!-- Action Buttons -->
     <div class="end-btn-group">
       <button class="btn end-btn" id="endReplay">↩️ MAIN LAGI</button>
@@ -1785,10 +1826,17 @@ const GAMBAR = {
 /*__AUDIO__*/
 
 /* ============================================================
-   MESIN PERMAINAN
+   MESIN PERMAINAN & KONFIGURASI
    ============================================================ */
 const $ = id => document.getElementById(id);
 const AWAL = 70, AMBANG = 30, PULIH = 10;
+
+// Konfigurasi Sinkronisasi Google Sheets (Google Apps Script)
+const CONFIG = {
+  GAS_URL: 'https://script.google.com/macros/s/AKfycbxpixgj5b2jGsPDtOvfJBg-ERPOwYHQE7pHr67p-g7wcFKQpPEuL6FGxt575O2L9NGqVw/exec',
+  SYNC_KEY: 'crackOfSoul_pendingSync',
+  HISTORY_KEY: 'crackOfSoul_history'
+};
 
 const KARAKTER = [
   {id:'p_gemuk', varian:'gemuk', nama:'Nadira', ciri:'Cewe · Gemuk · Rambut ikal',
@@ -1806,14 +1854,17 @@ const MUSIKBG = {L1:'level1',L2:'level2',L3:'level3'};
 
 let S = null, adegan = null, antrian = [], idxAntrian = 0, pilihanAktif = null;
 let mengetik = false, timerKetik = null, teksPenuh = '', kecepatan = 22;
-let bossState = null, cadangan = null;
+let bossState = null, cadangan = null, hasilTerkini = null;
 
 const cari = id => NASKAH.find(x => x.id === id);
 const isi = t => (t || '').replace(/\{NAMA\}/g, S ? S.nama : 'Kamu');
 
 function baru(){
-  return { nama:'', karakter:KARAKTER[0].id, varian:'gemuk',
-           hope:AWAL, courage:AWAL, mental:AWAL, langkah:0, ulang:0, pilihan:[] };
+  return { 
+    nama:'', sekolah:'', kelas:'', karakter:KARAKTER[0].id, varian:'gemuk',
+    hope:AWAL, courage:AWAL, mental:AWAL, langkah:0, ulang:0, pilihan:[],
+    waktuMulai: Date.now()
+  };
 }
 
 function simpanProgress() {
@@ -2260,6 +2311,7 @@ function tampilEnding(){
   const lapor = (S && S.pilihan) ? S.pilihan.filter(p=>p.aksi==='lapor').length : 0;
   const diam = (S && S.pilihan) ? S.pilihan.filter(p=>p.aksi==='diam').length : 0;
   const pergi = (S && S.pilihan) ? S.pilihan.filter(p=>p.aksi==='pergi').length : 0;
+  const balas = (S && S.pilihan) ? S.pilihan.filter(p=>p.aksi==='balas').length : 0;
   const pilihanBaik = (lapor + pergi + diam) * 4 + 16;
   const temanBantu = lapor * 3 + pergi * 2 + 6;
   const keberanian = Math.min(100, Math.max(50, Math.round(((S.courage || 80) / 100) * 100)));
@@ -2267,9 +2319,123 @@ function tampilEnding(){
   if ($('endPilihanBaik')) $('endPilihanBaik').textContent = pilihanBaik;
   if ($('endTemanBantu')) $('endTemanBantu').textContent = temanBantu;
   if ($('endKeberanian')) $('endKeberanian').textContent = `${keberanian}%`;
-  
+
+  // Hitung durasi bermain & data telemetri
+  const durasiMenit = S && S.waktuMulai ? Math.max(1, Math.round((Date.now() - S.waktuMulai) / 60000)) : 1;
+  const dataKarakter = KARAKTER.find(k => k.id === (S ? S.karakter : ''));
+  const namaKarakter = dataKarakter ? dataKarakter.nama : (S ? S.karakter : '-');
+
+  const payload = {
+    id: 'cos_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
+    waktu: new Date().toISOString(),
+    nama: S ? (S.nama || 'Anonim') : 'Anonim',
+    sekolah: S ? (S.sekolah || '-') : '-',
+    kelas: S ? (S.kelas || '-') : '-',
+    karakter: namaKarakter,
+    hope: S ? S.hope : 70,
+    courage: S ? S.courage : 70,
+    mental: S ? S.mental : 70,
+    pilihanBaik: pilihanBaik,
+    totalLapor: lapor,
+    totalPergi: pergi,
+    totalDiam: diam,
+    totalBalas: balas,
+    ulangAdegan: S ? (S.ulang || 0) : 0,
+    durasiMenit: durasiMenit,
+    status: 'TAMAT (True Ending)'
+  };
+
+  kirimHasilGame(payload);
   buka('sEnd');
 }
+
+/* ---------- pengiriman data & telemetri (Google Sheets) ---------- */
+async function kirimHasilGame(payload) {
+  hasilTerkini = payload;
+  
+  // 1. Simpan ke Riwayat Lokal
+  try {
+    const history = JSON.parse(localStorage.getItem(CONFIG.HISTORY_KEY) || '[]');
+    history.push(payload);
+    localStorage.setItem(CONFIG.HISTORY_KEY, JSON.stringify(history.slice(-20)));
+  } catch(e) {}
+
+  const setUI = (statusClass, title, desc, showRetry, icon) => {
+    const card = $('endSyncCard');
+    if (!card) return;
+    card.className = 'end-card sync-card ' + statusClass;
+    if ($('syncIcon')) $('syncIcon').textContent = icon;
+    if ($('syncTitle')) $('syncTitle').textContent = title;
+    if ($('syncDesc')) $('syncDesc').textContent = desc;
+    if ($('btnSyncRetry')) $('btnSyncRetry').style.display = showRetry ? 'block' : 'none';
+  };
+
+  // Cek apakah endpoint URL Google Apps Script sudah disetel
+  if (!CONFIG.GAS_URL || !CONFIG.GAS_URL.startsWith('http')) {
+    simpanPendingSync(payload);
+    setUI('offline', 'Data Tersimpan di Perangkat (Offline)', 
+          `Hasil permainan ${payload.nama} (${payload.sekolah}) tersimpan aman di perangkat ini.`, 
+          false, '💾');
+    return;
+  }
+
+  setUI('', 'Menyimpan ke Google Sheets...', 'Menghubungi server Google Sheets guru...', false, '📤');
+
+  try {
+    await fetch(CONFIG.GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+    
+    hapusPendingSync(payload.id);
+    setUI('sukses', '✅ Data Berhasil Terkirim ke Guru!', 
+          `Hasil permainan ${payload.nama} (${payload.sekolah}) telah otomatis dicatat di Google Sheets guru.`, 
+          false, '🎉');
+  } catch (err) {
+    simpanPendingSync(payload);
+    setUI('offline', '⚠️ Jaringan Terputus: Tersimpan Offline', 
+          'Data tersimpan aman di perangkat. Hubungkan internet lalu tekan tombol Kirim Ulang.', 
+          true, '📶');
+  }
+}
+
+function simpanPendingSync(data) {
+  try {
+    const pending = JSON.parse(localStorage.getItem(CONFIG.SYNC_KEY) || '[]');
+    if (!pending.find(p => p.id === data.id)) {
+      pending.push(data);
+      localStorage.setItem(CONFIG.SYNC_KEY, JSON.stringify(pending));
+    }
+  } catch(e) {}
+}
+
+function hapusPendingSync(id) {
+  try {
+    let pending = JSON.parse(localStorage.getItem(CONFIG.SYNC_KEY) || '[]');
+    pending = pending.filter(p => p.id !== id);
+    localStorage.setItem(CONFIG.SYNC_KEY, JSON.stringify(pending));
+  } catch(e) {}
+}
+
+async function cobaSyncPending() {
+  if (!CONFIG.GAS_URL || !CONFIG.GAS_URL.startsWith('http')) return;
+  try {
+    const pending = JSON.parse(localStorage.getItem(CONFIG.SYNC_KEY) || '[]');
+    if (!pending.length) return;
+    for (const item of pending) {
+      await fetch(CONFIG.GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(item)
+      });
+      hapusPendingSync(item.id);
+    }
+  } catch(e) {}
+}
+window.addEventListener('online', cobaSyncPending);
 
 /* ---------- pilih karakter ---------- */
 function isiKartu(){
@@ -2358,8 +2524,20 @@ if($('mSet')) if($('mSet')) $('mSet').onclick = ()=>{ Audio2.play('klik'); buka(
 if($('mTentang')) if($('mTentang')) $('mTentang').onclick = ()=>{ Audio2.play('klik'); buka('sAbout'); };
 if($('charGo')) $('charGo').onclick = ()=>{
   const n = $('nama').value.trim();
+  const sek = ($('sekolah') ? $('sekolah').value.trim() : '');
+  const kls = ($('kelas') ? $('kelas').value.trim() : '');
   if(!n){ toast('Tulis dulu nama karaktermu'); $('nama').focus(); return; }
-  S.nama = n; Audio2.play('klik'); buka('sTut');
+  if(!sek){ toast('Tuliskan asal sekolahmu'); if($('sekolah')) $('sekolah').focus(); return; }
+  S.nama = n;
+  S.sekolah = sek;
+  S.kelas = kls;
+  S.waktuMulai = S.waktuMulai || Date.now();
+  Audio2.play('klik'); buka('sTut');
+};
+if($('btnSyncRetry')) $('btnSyncRetry').onclick = ()=>{
+  Audio2.play('klik');
+  if(hasilTerkini) kirimHasilGame(hasilTerkini);
+  else toast('Belum ada data untuk dikirim.');
 };
 if($('tutGo')) $('tutGo').onclick = ()=>{ Audio2.play('klik'); if(!S){ buka('sMenu'); return; } tampilPeta(); };
 function tampilPeta(){
