@@ -173,7 +173,7 @@ const KATA_LATAR = [
   [/\b(menyimpan screenshot komentar sebagai bukti|menemui orang tuanya di ruang keluarga|menunjukkan HP-nya kepada orang tuanya|Komentar mereka bukan ukuran dari siapa kamu)\b/i, 'cg_l7_sosmed_lapor'],
   [/\b(mulai memblokir akun-akun|suasana di kolom komentarnya menjadi lebih tenang|nggak perlu lihat komentar mereka lagi)\b/i, 'cg_l7_sosmed_pergi'],
   [/\b(memilih untuk melakukan aktivitas lain|Lebih baik aku berhenti lihat)\b/i, 'cg_l7_sosmed_diam'],
-  [/\b(pun membalas komentar tersebut|membalas salah satu akun yang mengejeknya|Kalian siapa sih|Ngurusin hidup orang terus|Baper banget|situasi pun semakin panas)\b/i, 'cg_l7_sosmed_marah'],
+  [/\b(pun membalas komentar tersebut|membalas salah satu akun yang mengejeknya|Kalian siapa sih|Ngurusin hidup orang terus|Wih, marah.*Baper banget|situasi pun semakin panas)\b/i, 'cg_l7_sosmed_marah'],
   [/\b(mengunggahnya ke media sosial|muncul komentar dari akun yang tidak ia kenal|Wah, kusam banget|Kurang bagus kalau orang kayak gini|Siapa juga yang mau lihat beginian|buka kolom komentar lagi)\b/i, 'cg_l7_sosmed'],
 
   [/\b(sengaja mendorong (bahu )?(Reyan|Rafa|Alya|Mika|\{NAMA\})?.*hingga ia (terjatuh|kehilangan keseimbangan))\b/i, 'cg_l4_taman_jatuh'],
@@ -221,8 +221,17 @@ const KATA_LATAR = [
   [/\b(ruang kelas|di kelas|papan tulis|bangku kelas)\b/i, 'class'],
   [/\b(media sosial|grup chat|grup kelas|ponsel|hp\b|instagram|whatsapp|unggahan|komentar|layar)\b/i, 'phone']
 ];
-function latarDariTeks(t) {
-  for (const [re, k] of KATA_LATAR) if (re.test(t || '')) return k;
+function latarDariTeks(t, sceneId) {
+  for (const [re, k] of KATA_LATAR) {
+    if (re.test(t || '')) {
+      if (k.startsWith('cg_') && sceneId) {
+        if (sceneId.startsWith('L1') && !(k.startsWith('cg_l1') || k.startsWith('cg_l2') || k.startsWith('cg_l3_perpus'))) continue;
+        if (sceneId.startsWith('L2') && !(k.startsWith('cg_l4') || k.startsWith('cg_l5') || k.startsWith('cg_l6'))) continue;
+        if (sceneId.startsWith('L3') && !(k.startsWith('cg_l7') || k.startsWith('cg_l8') || k.startsWith('cg_l9'))) continue;
+      }
+      return k;
+    }
+  }
   return null;
 }
 

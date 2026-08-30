@@ -344,6 +344,7 @@
   .end-btn.primary { background: linear-gradient(135deg, #7e22ce, #9333ea); border: none; box-shadow: 0 4px 14px rgba(147,51,234,0.4); }
   .end-btn.ghost { background: transparent; border-color: rgba(255,255,255,0.1); color: var(--muted); }
   .end-btn:active { transform: scale(0.98); }
+  .end-btn:disabled { opacity: 0.35; cursor: not-allowed; pointer-events: none; filter: grayscale(0.85); box-shadow: none; }
   .end-footer-tag { font-size: 10.5px; color: #9ca3af; text-align: center; margin-top: 2px; }
 
   /* ---- sync card ---- */
@@ -1303,7 +1304,7 @@
         <input id="sekolah" maxlength="35" placeholder="Contoh: SMPN 1 / SMAN 2">
       </div>
       <div class="form-group" style="flex:0.8">
-        <label class="form-label">Kelas</label>
+        <label class="form-label">Kelas *</label>
         <input id="kelas" maxlength="15" placeholder="Contoh: IX-B / X-1">
       </div>
     </div>
@@ -1697,9 +1698,9 @@
 
     <!-- Action Buttons -->
     <div class="end-btn-group">
-      <button class="btn end-btn" id="endReplay">↩️ MAIN LAGI</button>
-      <button class="btn end-btn primary" id="endHome">🏠 MENU UTAMA</button>
-      <button class="btn end-btn ghost" id="endExit">🚪 KELUAR</button>
+      <button class="btn end-btn" id="endReplay" disabled>↩️ MAIN LAGI</button>
+      <button class="btn end-btn primary" id="endHome" disabled>🏠 MENU UTAMA</button>
+      <button class="btn end-btn ghost" id="endExit" disabled>🚪 KELUAR</button>
     </div>
 
     <div class="end-footer-tag">Terima kasih telah menjadi bagian dari perubahan. ♡</div>
@@ -5533,7 +5534,7 @@ const KATA_LATAR = [
   [/\b(menyimpan screenshot komentar sebagai bukti|menemui orang tuanya di ruang keluarga|menunjukkan HP-nya kepada orang tuanya|Komentar mereka bukan ukuran dari siapa kamu)\b/i, 'cg_l7_sosmed_lapor'],
   [/\b(mulai memblokir akun-akun|suasana di kolom komentarnya menjadi lebih tenang|nggak perlu lihat komentar mereka lagi)\b/i, 'cg_l7_sosmed_pergi'],
   [/\b(memilih untuk melakukan aktivitas lain|Lebih baik aku berhenti lihat)\b/i, 'cg_l7_sosmed_diam'],
-  [/\b(pun membalas komentar tersebut|membalas salah satu akun yang mengejeknya|Kalian siapa sih|Ngurusin hidup orang terus|Baper banget|situasi pun semakin panas)\b/i, 'cg_l7_sosmed_marah'],
+  [/\b(pun membalas komentar tersebut|membalas salah satu akun yang mengejeknya|Kalian siapa sih|Ngurusin hidup orang terus|Wih, marah.*Baper banget|situasi pun semakin panas)\b/i, 'cg_l7_sosmed_marah'],
   [/\b(mengunggahnya ke media sosial|muncul komentar dari akun yang tidak ia kenal|Wah, kusam banget|Kurang bagus kalau orang kayak gini|Siapa juga yang mau lihat beginian|buka kolom komentar lagi)\b/i, 'cg_l7_sosmed'],
 
   [/\b(sengaja mendorong (bahu )?(Reyan|Rafa|Alya|Mika|\{NAMA\})?.*hingga ia (terjatuh|kehilangan keseimbangan))\b/i, 'cg_l4_taman_jatuh'],
@@ -5581,8 +5582,17 @@ const KATA_LATAR = [
   [/\b(ruang kelas|di kelas|papan tulis|bangku kelas)\b/i, 'class'],
   [/\b(media sosial|grup chat|grup kelas|ponsel|hp\b|instagram|whatsapp|unggahan|komentar|layar)\b/i, 'phone']
 ];
-function latarDariTeks(t) {
-  for (const [re, k] of KATA_LATAR) if (re.test(t || '')) return k;
+function latarDariTeks(t, sceneId) {
+  for (const [re, k] of KATA_LATAR) {
+    if (re.test(t || '')) {
+      if (k.startsWith('cg_') && sceneId) {
+        if (sceneId.startsWith('L1') && !(k.startsWith('cg_l1') || k.startsWith('cg_l2') || k.startsWith('cg_l3_perpus'))) continue;
+        if (sceneId.startsWith('L2') && !(k.startsWith('cg_l4') || k.startsWith('cg_l5') || k.startsWith('cg_l6'))) continue;
+        if (sceneId.startsWith('L3') && !(k.startsWith('cg_l7') || k.startsWith('cg_l8') || k.startsWith('cg_l9'))) continue;
+      }
+      return k;
+    }
+  }
   return null;
 }
 
@@ -6277,7 +6287,7 @@ function lanjutBaris(v){
     Audio2.play('dialog');
     if(b.who) pastikanLawan(b.who);
     if(adegan && adegan.tipe !== 'boss'){
-      const lk = latarDariTeks(b.text);
+      const lk = latarDariTeks(b.text, adegan.id);
       if(lk && lk.startsWith('cg_') && lk !== $('bgart').dataset.k){ $('bg').className = 'bg-' + lk; pasangLatar(lk); pasangDepan(lk); }
     }
     ketik(isi(b.text), b.who ? isi(b.who) : '', b.aksi ? isi(b.aksi) : '');
@@ -6494,8 +6504,16 @@ function tampilEnding(){
     status: 'TAMAT (True Ending)'
   };
 
+  setEndButtonsState(false);
   kirimHasilGame(payload);
   buka('sEnd');
+}
+
+function setEndButtonsState(enabled) {
+  ['endReplay', 'endHome', 'endExit', 'endGo'].forEach(id => {
+    const el = $(id);
+    if (el) el.disabled = !enabled;
+  });
 }
 
 /* ---------- pengiriman data & telemetri (Google Sheets) ---------- */
@@ -6517,6 +6535,7 @@ async function kirimHasilGame(payload) {
     if ($('syncTitle')) $('syncTitle').textContent = title;
     if ($('syncDesc')) $('syncDesc').textContent = desc;
     if ($('btnSyncRetry')) $('btnSyncRetry').style.display = showRetry ? 'block' : 'none';
+    setEndButtonsState(statusClass === 'sukses');
   };
 
   // Cek apakah endpoint URL Google Apps Script sudah disetel
@@ -6675,8 +6694,16 @@ if($('charGo')) $('charGo').onclick = ()=>{
   const n = $('nama').value.trim();
   const sek = ($('sekolah') ? $('sekolah').value.trim() : '');
   const kls = ($('kelas') ? $('kelas').value.trim() : '');
-  if(!n){ toast('Tulis dulu nama karaktermu'); $('nama').focus(); return; }
-  if(!sek){ toast('Tuliskan asal sekolahmu'); if($('sekolah')) $('sekolah').focus(); return; }
+
+  if(!n){ toast('Nama karakter / siswa wajib diisi'); $('nama').focus(); return; }
+  if(n.length < 2){ toast('Nama minimal 2 huruf'); $('nama').focus(); return; }
+
+  if(!sek){ toast('Asal sekolah wajib diisi'); if($('sekolah')) $('sekolah').focus(); return; }
+  if(sek.length < 4){ toast('Asal sekolah minimal 4 huruf'); if($('sekolah')) $('sekolah').focus(); return; }
+
+  if(!kls){ toast('Kelas wajib diisi (contoh: IX-B / X-1)'); if($('kelas')) $('kelas').focus(); return; }
+  if(kls.length < 2){ toast('Kelas minimal 2 karakter (contoh: 9A / IX-B)'); if($('kelas')) $('kelas').focus(); return; }
+
   S.nama = n;
   S.sekolah = sek;
   S.kelas = kls;
@@ -6709,10 +6736,10 @@ if($('lvGo')) $('lvGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('eduGo')) $('eduGo').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('eduGo2')) $('eduGo2').onclick = ()=>{ Audio2.play('klik'); tampilPeta(); };
 if($('overGo')) $('overGo').onclick = ()=>{ Audio2.play('klik'); ulangiAdegan(); };
-if($('endReplay')) $('endReplay').onclick = ()=>{ Audio2.play('klik'); location.reload(); };
-if($('endHome')) $('endHome').onclick = ()=>{ Audio2.play('klik'); location.reload(); };
-if($('endExit')) $('endExit').onclick = ()=>{ Audio2.play('klik'); location.reload(); };
-if($('endGo')) $('endGo').onclick = ()=>location.reload();
+if($('endReplay')) $('endReplay').onclick = (e)=>{ if($('endReplay').disabled){ e.preventDefault(); return; } Audio2.play('klik'); location.reload(); };
+if($('endHome')) $('endHome').onclick = (e)=>{ if($('endHome').disabled){ e.preventDefault(); return; } Audio2.play('klik'); location.reload(); };
+if($('endExit')) $('endExit').onclick = (e)=>{ if($('endExit').disabled){ e.preventDefault(); return; } Audio2.play('klik'); location.reload(); };
+if($('endGo')) $('endGo').onclick = (e)=>{ if($('endGo').disabled){ e.preventDefault(); return; } location.reload(); };
 const cbPause = ()=>{ Audio2.play('klik'); buka(S && S.nama ? 'sPause' : 'sMenu'); };
 if($('setGo')) $('setGo').onclick = cbPause;
 if($('aboutGo')) $('aboutGo').onclick = cbPause;
