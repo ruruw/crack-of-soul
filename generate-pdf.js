@@ -493,6 +493,182 @@ async function generatePDF() {
   });
   console.log('Successfully created PANDUAN-GOOGLE-SHEETS.pdf!');
 
+  // Generate INVOICE-PELUNASAN.pdf
+  const invMd = fs.readFileSync('INVOICE-PELUNASAN.md', 'utf8');
+  const invHtmlContent = mdToHtml(invMd);
+  const invFullHtml = `
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice Pelunasan - The Crack of Soul</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spectral:ital,wght@0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    @page {
+      size: A4;
+      margin: 16mm 16mm 16mm 16mm;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: #1e1b2e;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .inv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #7c3aed;
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .inv-brand h1 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 22pt;
+      font-weight: 700;
+      color: #5b21b6;
+      margin: 0 0 2px 0;
+      letter-spacing: 0.02em;
+    }
+    .inv-brand .sub {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #7c3aed;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .inv-tag {
+      text-align: right;
+    }
+    .inv-title {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #1e1b2e;
+      letter-spacing: 0.05em;
+      margin: 0 0 4px 0;
+    }
+    .inv-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5pt;
+      color: #6b7280;
+      font-weight: 600;
+    }
+    .badge-status {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      background: #fef3c7;
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+
+    h3 {
+      font-size: 11pt;
+      color: #4c1d95;
+      margin: 14px 0 6px 0;
+      border-left: 3px solid #7c3aed;
+      padding-left: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 14px 0;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 7px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f5f3ff;
+      color: #4c1d95;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background-color: #faf5ff; }
+
+    .total-box {
+      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+      border: 2px solid #c4b5fd;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .total-label {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #4c1d95;
+    }
+    .total-amount {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #6d28d9;
+    }
+
+    .bank-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      font-size: 9pt;
+      line-height: 1.5;
+    }
+
+    hr { border: 0; height: 1px; background: #e2e8f0; margin: 16px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="inv-header">
+    <div class="inv-brand">
+      <h1>THE CRACK OF SOUL</h1>
+      <div class="sub">Game Development & Interactive System</div>
+      <div style="font-size:8.5pt; color:#6b7280; margin-top:4px;">Website: merurw.com | Developer: Meru</div>
+    </div>
+    <div class="inv-tag">
+      <div class="inv-title">INVOICE</div>
+      <div class="inv-num">No: INV/20260831/COS-02</div>
+      <div class="badge-status">⏳ MENUNGGU PELUNASAN</div>
+    </div>
+  </div>
+
+  ${invHtmlContent.replace(/<h1>🧾 INVOICE \/ NOTA TAGIHAN PELUNASAN<\/h1>/i, '').replace(/<p><strong>Nomor Invoice<\/strong>:.*?<\/p>/is, '')}
+
+</body>
+</html>
+  `;
+
+  await page.setContent(invFullHtml, { waitUntil: 'networkidle' });
+  await page.pdf({
+    path: 'INVOICE-PELUNASAN.pdf',
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '16mm',
+      bottom: '16mm',
+      left: '16mm',
+      right: '16mm'
+    }
+  });
+  console.log('Successfully created INVOICE-PELUNASAN.pdf!');
+
   await browser.close();
 }
 

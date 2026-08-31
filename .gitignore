@@ -3,3 +3,7 @@ SERAH-TERIMA.md
 node_modules/
 .DS_Store
 dist.zip
+INVOICE*
+*invoice*
+doc-preview.html
+
